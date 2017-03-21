@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-#include <vector>
 using std::string;
 //using namespace std;
 class MovieChooser

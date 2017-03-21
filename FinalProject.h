@@ -225,94 +225,110 @@ bool checkInput(int userinput) //checks to make sure the user is typing in the p
 
 bool loginMenu(linked_list<user>* userList)
 {
+  bool logIn = true;
+  while(logIn)
+  {
 	std::cout << "1. Log in" << std::endl;
 	std::cout << "2. Create New User" << std::endl;
 	std::cout << "3. Exit System\n" << std::endl;
 	std::cout << "Choice: ";
-	
-	
-	
+
+
+
 	int choice = 0;
-	
+
 	std::cin >> choice;
-	
+  if (std::cin.fail())
+  {
+    std::cin.clear();
+    std::cin.ignore(100,'\n');
+  }
+  if(!checkInput(choice))
+  {
+    std::cout << "Incorrect input please input a number 1 through 5" << std::endl;
+    continue;
+  }
+  else //correct input switch
+  {
+
 	switch(choice){
-		
+
 		case 1:{
-			
+
 			string username = "";
 			string password = "";
-			
+
 			std::cout << "\nUsername: ";
 			std::cin >> username;
-			
+
 			int userListSize = userList->size();
-			
+
 			if(userListSize == 0){
 					std::cout << "Username does not exist.\n" << std::endl;
 					break;
 				}
-			
+
 			for(int i = 0; i != userListSize; i++){
-				
+
 				user tempUser = userList->item_at(i);
-				
+
 				string tempName = tempUser.getUsername();
-				
+
 				if(username != tempName){
 					std::cout << "Username does not exist.\n" << std::endl;
 					break;
-					
+
 				}
-				
+
 				std::cout << "Password: ";
 				std::cin >> password;
-				
+
 				string tempPass = tempUser.getPassword();
-				
+
 				if(password == tempPass){
 					return true;
 				}
 				else{
 					std::cout << "Wrong password!\n" << std::endl;
 					break;
-					
+
 				}
-				
-				
-				
+
+
+
 			}
-			
+
 			break;
 		}
-		
+
 		case 2:{
 			string username = "";
 			string password = "";
-			
+
 			std::cout << "\nUsername: ";
 			std::cin >> username;
-			
+
 			std::cout << "Password: ";
 			std::cin >> password;
-			
+
 			user newUser(username,password);
-			
+
 			userList->insert(newUser, 0);
-			
+
 			std::cout << "User created!\n" << std::endl;
-			
+
 			break;
 		}
-		
+
 		case 3:{
-			
-			//exit = true;
-			
+      std::cout << "Thank you for using Movie Quiz" << std::endl;
+			return 0;
+      break;
+
 		}
-			
+
 	}
-	
-	
+}
+}
 	return false;
 }

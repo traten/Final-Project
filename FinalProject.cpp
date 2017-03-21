@@ -28,7 +28,19 @@ while(true) //this is used for creating new user
       std::cout << "Logged Out" << std::endl;
       logIn = false;
       break;
-      case 4: //exits system entirely
+      case 4:
+      std::cout << "Programmer's Top Picks: " << std::endl;
+      std::cout << "Pulp Fiction" << std::endl;
+      std::cout << "Django Unchained" << std::endl;
+      std::cout << "Star Wars, the OG trilogy" << std::endl;
+      std::cout << "Lord of the Rings" << std::endl;
+      std::cout << "Toy Story" << std::endl;
+      std::cout << "Fight Club" << std::endl;
+      std::cout << "The Dark Knight" << std::endl;
+      std::cout << "The Matrix" << std::endl;
+      std::cout << "Hotel Rwanda" << std::endl;
+      break;
+      case 5: //exits system entirely
       std::cout << "Thank you for using Movie Quiz" << std::endl;
       return 0;
     }

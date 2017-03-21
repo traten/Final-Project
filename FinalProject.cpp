@@ -14,7 +14,7 @@ while(true) //this is used for creating new user
   test.userCreateLogIn(); //may take the print statments out of this method and move them into main
   while(true) //used for when user is inside log in page
   {
-    test.menu();
+    menu();
   }
 }
 return 0;

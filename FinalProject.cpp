@@ -13,9 +13,9 @@ int main()
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
-  if(exit == true){
-			return 0;
-		}
+  //if(exit == true){
+  //		return 0;
+  //		}
   
   bool logIn = loginMenu(userList);
   

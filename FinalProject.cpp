@@ -5,7 +5,7 @@
 #include <vector>
 MovieChooser test;
 
-
+//test change - Claire
 int main()
 {
   //This will be the menu used inside the first for loop

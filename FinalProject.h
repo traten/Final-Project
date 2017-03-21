@@ -225,7 +225,7 @@ bool checkInput(int userinput) //checks to make sure the user is typing in the p
 
 bool loginMenu(linked_list<user>* userList)
 {
-	std::cout << "1. Log in" << std::std::endl;
+	std::cout << "1. Log in" << std::endl;
 	std::cout << "2. Create New User" << std::endl;
 	std::cout << "3. Exit System\n" << std::endl;
 	std::cout << "Choice: ";
@@ -307,7 +307,7 @@ bool loginMenu(linked_list<user>* userList)
 		
 		case 3:{
 			
-			exit = true;
+			//exit = true;
 			
 		}
 			

@@ -4,7 +4,7 @@
 #include <string>
 MovieChooser test;
 
-bool exit = false; //For exiting within log in menu
+//bool exit = false; //For exiting within log in menu
 int main()
 {
   //Creates linked list to hold user objects

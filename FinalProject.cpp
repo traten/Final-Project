@@ -11,10 +11,27 @@ int main()
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
-  test.userCreateLogIn(); //may take the print statments out of this method and move them into main
-  while(true) //used for when user is inside log in page
+  std::cout<< "Here" << std::endl;
+  bool logIn = true; //boolean to tell us if we are logged in
+  while(logIn) //used for when user is inside log in page
   {
-    menu();
+    int choice = menu();
+    switch(choice)
+    {
+      case 1: //quiz section
+      std::cout << "Movie Quiz" << std::endl;
+      break;
+      case 2: //Prints quiz
+      std::cout << "Printing Quiz results" << std::endl;
+      break;
+      case 3: //logs out of system
+      std::cout << "Logged Out" << std::endl;
+      logIn = false;
+      break;
+      case 4: //exits system entirely
+      std::cout << "Thank you for using Movie Quiz" << std::endl;
+      return 0;
+    }
   }
 }
 return 0;

@@ -23,6 +23,18 @@ while(true) //this is used for creating new user
   while(logIn) //used for when user is inside log in page
   {
     int choice = menu();
+    if (std::cin.fail())
+    {
+      std::cin.clear();
+      std::cin.ignore(100,'\n');
+    }
+    if(!checkInput(choice))
+    {
+      std::cout << "Incorrect input please input a number 1 through 5" << std::endl;
+      continue;
+    }
+    else //correct input switch
+    {
     switch(choice)
     {
       case 1: //quiz section
@@ -52,6 +64,7 @@ while(true) //this is used for creating new user
       return 0;
     }
   }
+}
 }
 return 0;
 }

@@ -210,6 +210,19 @@ int menu()
   return userInput;
 }
 
+bool checkInput(int userinput) //checks to make sure the user is typing in the proper input
+{
+  if(userinput <= 0 || userinput >= 6 || (userinput % 1 != 0))
+  {
+    return false;
+  }
+  else
+  {
+    return true;
+  }
+}
+
+
 bool loginMenu(linked_list<user>* userList)
 {
 	cout << "1. Log in" << std::endl;

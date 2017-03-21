@@ -4,14 +4,22 @@
 #include <string>
 MovieChooser test;
 
-//test change - Claire
+bool exit = false; //For exiting within log in menu
 int main()
 {
+  //Creates linked list to hold user objects
+  linked_list<user>* userList = new linked_list<user>; 
+  
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
-  std::cout<< "Here" << std::endl;
-  bool logIn = true; //boolean to tell us if we are logged in
+  if(exit == true){
+			return 0;
+		}
+  
+  bool logIn = loginMenu(userList);
+  
+  
   while(logIn) //used for when user is inside log in page
   {
     int choice = menu();
@@ -48,5 +56,22 @@ while(true) //this is used for creating new user
 return 0;
 }
 
+//user Class Definitions
+
+user::user(string username, string password){
+	this->username = username;
+	this->password = password;
+	
+}
+
+string user::getUsername(){
+	return this->username;
+	
+}
+
+string user::getPassword(){
+	return this->password;
+	
+}
 
 //Test 

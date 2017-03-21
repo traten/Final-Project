@@ -209,3 +209,97 @@ int menu()
   std::cin >> userInput;
   return userInput;
 }
+
+bool loginMenu(linked_list<user>* userList)
+{
+	cout << "1. Log in" << std::endl;
+	cout << "2. Create New User" << endl;
+	cout << "3. Exit System\n" << endl;
+	cout << "Choice: ";
+	
+	
+	
+	int choice = 0;
+	
+	cin >> choice;
+	
+	switch(choice){
+		
+		case 1:{
+			
+			string username = "";
+			string password = "";
+			
+			cout << "\nUsername: ";
+			cin >> username;
+			
+			int userListSize = userList->size();
+			
+			if(userListSize == 0){
+					cout << "Username does not exist.\n" << endl;
+					break;
+				}
+			
+			for(int i = 0; i != userListSize; i++){
+				
+				user tempUser = userList->item_at(i);
+				
+				string tempName = tempUser.getUsername();
+				
+				if(username != tempName){
+					cout << "Username does not exist.\n" << endl;
+					break;
+					
+				}
+				
+				cout << "Password: ";
+				cin >> password;
+				
+				string tempPass = tempUser.getPassword();
+				
+				if(password == tempPass){
+					return true;
+				}
+				else{
+					cout << "Wrong password!\n" << endl;
+					break;
+					
+				}
+				
+				
+				
+			}
+			
+			break;
+		}
+		
+		case 2:{
+			string username = "";
+			string password = "";
+			
+			cout << "\nUsername: ";
+			cin >> username;
+			
+			cout << "Password: ";
+			cin >> password;
+			
+			user newUser(username,password);
+			
+			userList->insert(newUser, 0);
+			
+			cout << "User created!\n" << endl;
+			
+			break;
+		}
+		
+		case 3:{
+			
+			exit = true;
+			
+		}
+			
+	}
+	
+	
+	return false;
+}

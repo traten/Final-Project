@@ -225,16 +225,16 @@ bool checkInput(int userinput) //checks to make sure the user is typing in the p
 
 bool loginMenu(linked_list<user>* userList)
 {
-	cout << "1. Log in" << std::endl;
-	cout << "2. Create New User" << endl;
-	cout << "3. Exit System\n" << endl;
-	cout << "Choice: ";
+	std::cout << "1. Log in" << std::std::endl;
+	std::cout << "2. Create New User" << std::endl;
+	std::cout << "3. Exit System\n" << std::endl;
+	std::cout << "Choice: ";
 	
 	
 	
 	int choice = 0;
 	
-	cin >> choice;
+	std::cin >> choice;
 	
 	switch(choice){
 		
@@ -243,13 +243,13 @@ bool loginMenu(linked_list<user>* userList)
 			string username = "";
 			string password = "";
 			
-			cout << "\nUsername: ";
-			cin >> username;
+			std::cout << "\nUsername: ";
+			std::cin >> username;
 			
 			int userListSize = userList->size();
 			
 			if(userListSize == 0){
-					cout << "Username does not exist.\n" << endl;
+					std::cout << "Username does not exist.\n" << std::endl;
 					break;
 				}
 			
@@ -260,13 +260,13 @@ bool loginMenu(linked_list<user>* userList)
 				string tempName = tempUser.getUsername();
 				
 				if(username != tempName){
-					cout << "Username does not exist.\n" << endl;
+					std::cout << "Username does not exist.\n" << std::endl;
 					break;
 					
 				}
 				
-				cout << "Password: ";
-				cin >> password;
+				std::cout << "Password: ";
+				std::cin >> password;
 				
 				string tempPass = tempUser.getPassword();
 				
@@ -274,7 +274,7 @@ bool loginMenu(linked_list<user>* userList)
 					return true;
 				}
 				else{
-					cout << "Wrong password!\n" << endl;
+					std::cout << "Wrong password!\n" << std::endl;
 					break;
 					
 				}
@@ -290,17 +290,17 @@ bool loginMenu(linked_list<user>* userList)
 			string username = "";
 			string password = "";
 			
-			cout << "\nUsername: ";
-			cin >> username;
+			std::cout << "\nUsername: ";
+			std::cin >> username;
 			
-			cout << "Password: ";
-			cin >> password;
+			std::cout << "Password: ";
+			std::cin >> password;
 			
 			user newUser(username,password);
 			
 			userList->insert(newUser, 0);
 			
-			cout << "User created!\n" << endl;
+			std::cout << "User created!\n" << std::endl;
 			
 			break;
 		}

@@ -39,12 +39,69 @@ private:
     double adventure;
     double history;
 public:
-    getTrait(double trait);
-    setTrait(double amountToSet);
-    modifyCompliments(double trait1, double trait2);
+    void getTrait(double trait);
+    void setTrait(double amountToSet);
+    void modifyCompliments(string trait1, double modAmount);
 };
 
-
+void Traits::modifyCompliments(string trait1, double modAmount){
+    if (trait1.compare("violent")){
+        this->violent += modAmount;
+        this-> pansy -= modAmount;
+    }
+    if (trait1.compare("pansy")){
+        this->pansy += modAmount;
+        this->violent -= modAmount;
+    }
+    if(trait1.compare("serious")){
+        this->serious += modAmount;
+        this->carefree -= modAmount;
+    }
+    if(trait1.compare("carefree")){
+        this->carefree += modAmount;
+        this->serious -= modAmount;
+    }
+    if(trait1.compare("imaginative")){
+        this->imaginative += modAmount;
+        this->practical -= modAmount;
+    }
+    if(trait1.compare("practical")){
+        this->practical += modAmount;
+        this->imaginative -= modAmount;
+    }
+    if(trait1.compare("thrillseeker")){
+        this->thrillseeker += modAmount;
+        this->playItSafe -= modAmount;
+    }
+    if(trait1.compare("playItSafe")){
+        this->playItSafe += modAmount;
+        this->thrillseeker -= modAmount;
+    }
+    if (trait1.compare("empathetic")){
+        this->empathetic += modAmount;
+        this->apathetic -= modAmount;
+    }
+    if (trait1.compare("apathetic")){
+        this->apathetic += modAmount;
+        this->empathetic -= modAmount;
+    }
+    if (trait1.compare("optimistic")){
+        this->optimistic += modAmount;
+        this->pessimistic -= modAmount;
+    }
+    if (trait1.compare("pessimistic")){
+        this->pessimistic += modAmount;
+        this->optimistic -= modAmount;
+    }
+    if (trait1.compare("predictable")){
+        this->predictable += modAmount;
+        this->unpredictable -= modAmount;
+    }
+    if (trait1.compare("unpredictable")){
+        this->unpredictable += modAmount;
+        this->predictable -= modAmount;
+    }
+}
 
 #endif /* TRAIT_H */
 

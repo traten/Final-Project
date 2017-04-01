@@ -64,6 +64,60 @@ Traits::Traits(){
     double history = 50.0;
 }
 
+double Traits::getTrait(string trait){
+    if (trait.compare("violent")){
+        return this->violent;
+    }
+    if (trait.compare("pansy")){
+        return this->pansy;
+    }
+    if (trait.compare("serious")){
+        return this->serious;
+    }
+     if (trait.compare("carefree")){
+        return this->carefree;
+    }
+     if (trait.compare("imaginative")){
+        return this->imaginative;
+    }
+     if (trait.compare("practical")){
+        return this->practical;
+    }
+     if (trait.compare("religious")){
+        return this->religious;
+    }
+     if (trait.compare("thrillseeker")){
+        return this->thrillseeker;
+    }
+     if (trait.compare("playItSafe")){
+        return this->playItSafe;
+    }
+     if (trait.compare("empathetic")){
+        return this->empathetic;
+    }
+     if (trait.compare("apathetic")){
+        return this->apathetic;
+    }
+     if (trait.compare("optimistic")){
+        return this->optimistic;
+    }
+     if (trait.compare("pessimistic")){
+        return this->pessimistic;
+    }
+     if (trait.compare("predictable")){
+        return this->predictable;
+    }
+     if (trait.compare("unpredictable")){
+        return this->unpredictable;
+    }
+     if (trait.compare("adventure")){
+        return this->adventure;
+    }
+     if (trait.compare("history")){
+        return this->history;
+    }
+}
+
 void Traits::modifyCompliments(string trait1, double modAmount){
     if (trait1.compare("violent")){
         this->violent += modAmount;

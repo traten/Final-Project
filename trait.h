@@ -39,29 +39,30 @@ private:
     double adventure;
     double history;
 public:
-    void getTrait(double trait);
+    Traits();
+    double getTrait(string trait);
     void setTrait(double amountToSet);
     void modifyCompliments(string trait1, double modAmount);
 };
 
 Traits::Traits(){
-    double violent = 50.0;
-    double pansy = 50.0;
-    double serious = 50.0;
-    double carefree = 50.0;
-    double imaginative = 50.0;
-    double practical = 50.0;
-    double religious = 50.0;
-    double thrillseeker = 50.0;
-    double playItSafe = 50.0;
-    double empathetic = 50.0;
-    double apathetic = 50.0;
-    double optimistic = 50.0;
-    double pessimistic = 50.0;
-    double predictable = 50.0;
-    double unpredictable = 50.0;
-    double adventure = 50.0;
-    double history = 50.0;
+    this->violent = 50.0;
+    this->pansy = 50.0;
+    this->serious = 50.0;
+    this->carefree = 50.0;
+    this->imaginative = 50.0;
+    this->practical = 50.0;
+    this->religious = 50.0;
+    this->thrillseeker = 50.0;
+    this->playItSafe = 50.0;
+    this->empathetic = 50.0;
+    this->apathetic = 50.0;
+    this->optimistic = 50.0;
+    this->pessimistic = 50.0;
+    this->predictable = 50.0;
+    this->unpredictable = 50.0;
+    this->adventure = 50.0;
+    this->history = 50.0; 
 }
 
 double Traits::getTrait(string trait){

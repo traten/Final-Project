@@ -44,6 +44,26 @@ public:
     void modifyCompliments(string trait1, double modAmount);
 };
 
+Traits::Traits(){
+    double violent = 50.0;
+    double pansy = 50.0;
+    double serious = 50.0;
+    double carefree = 50.0;
+    double imaginative = 50.0;
+    double practical = 50.0;
+    double religious = 50.0;
+    double thrillseeker = 50.0;
+    double playItSafe = 50.0;
+    double empathetic = 50.0;
+    double apathetic = 50.0;
+    double optimistic = 50.0;
+    double pessimistic = 50.0;
+    double predictable = 50.0;
+    double unpredictable = 50.0;
+    double adventure = 50.0;
+    double history = 50.0;
+}
+
 void Traits::modifyCompliments(string trait1, double modAmount){
     if (trait1.compare("violent")){
         this->violent += modAmount;

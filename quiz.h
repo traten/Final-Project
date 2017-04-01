@@ -111,6 +111,13 @@ void printQuiz(){
     std::cout << "B) Eat it. You're hungry now!" << endl;
     std::cout << "C) Attempt to throw it at a squirrel in the hopes that you will have dinner when the squirrel is knocked out" << endl;
     std::cout << "D) Talk to it and see if it will tell you its secrets \n" << endl;
+    
+    std::cout << "Question 14" << endl;
+    std::cout << "You are on vacation in France. What do you do with your time?" << endl;
+    std::cout << "A) Explore the city" << endl;
+    std::cout << "B) Eat lots of food" << endl;
+    std::cout << "C) Stay inside. You don't want to deal with people." << endl;
+    std::cout << "D) Paint the view from your hotel room" <<endl;
                     
 }
 #endif /* QUIZ_H */

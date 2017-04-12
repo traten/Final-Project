@@ -119,6 +119,7 @@ double Traits::getTrait(string trait){
      if (trait.compare("history")){
         return this->history;
     }
+    return;
 }
 
 void Traits::modifyCompliments(string trait1, double modAmount){

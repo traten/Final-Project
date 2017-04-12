@@ -1,5 +1,5 @@
-#ifndef	//source
-#define //source
+#ifndef	FinalProject
+#define FinalProject
 #include <string>
 #include <cstdlib>
 #include <iostream>

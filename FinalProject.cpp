@@ -1,26 +1,28 @@
-#include "FinalProject.h"
+#include "FinalProject1.h"
+#include "quiz.h"
+#include "trait.h"
+#include "movieList.h"
 #include <iostream>
 #include <cstring>
 #include <string>
-#include "quiz.h"
 MovieChooser test;
 
 //bool exit = false; //For exiting within log in menu
 int main()
 {
   //Creates linked list to hold user objects
-  linked_list<user>* userList = new linked_list<user>; 
-  
+  linked_list<user>* userList = new linked_list<user>;
+
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
   //if(exit == true){
   //		return 0;
   //		}
-  
+
   bool logIn = loginMenu(userList);
-  
-  
+
+
   while(logIn) //used for when user is inside log in page
   {
     int choice = menu();
@@ -40,16 +42,11 @@ while(true) //this is used for creating new user
     {
       case 1: //quiz section
       std::cout << "Movie Quiz" << std::endl;
-      printQuiz();
       break;
       case 2: //Prints quiz
       std::cout << "Printing Quiz results" << std::endl;
       break;
       case 3: //logs out of system
-      std::cout << "Logged Out" << std::endl;
-      logIn = false;
-      break;
-      case 4:
       std::cout << "Programmer's Top Picks: " << std::endl;
       std::cout << "Pulp Fiction" << std::endl;
       std::cout << "Django Unchained" << std::endl;
@@ -60,6 +57,10 @@ while(true) //this is used for creating new user
       std::cout << "The Dark Knight" << std::endl;
       std::cout << "The Matrix" << std::endl;
       std::cout << "Hotel Rwanda" << std::endl;
+      break;
+      case 4:
+      std::cout << "Logged Out" << std::endl;
+      logIn = false;
       break;
       case 5: //exits system entirely
       std::cout << "Thank you for using Movie Quiz" << std::endl;
@@ -76,17 +77,17 @@ return 0;
 user::user(string username, string password){
 	this->username = username;
 	this->password = password;
-	
+
 }
 
 string user::getUsername(){
 	return this->username;
-	
+
 }
 
 string user::getPassword(){
 	return this->password;
-	
+
 }
 
-//Test 
+//Test

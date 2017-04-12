@@ -474,7 +474,6 @@ void question14() {
     }
 }
 void printQuiz(){
-    string answerMods[] = {};
     question1();
     question2();
     question3();

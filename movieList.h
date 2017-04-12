@@ -16,8 +16,20 @@ class movieList
 		string getMovie(int index);
 };
 
-movieList::movieList(int size, string fileName)
+movieList::movieList(string fileName)
 {
+	std::ifstream sizeCalc(fileName, fstream::in);
+
+	string temp;
+	int size = 0;
+
+	while (std::getline(sizeCalc, temp))
+	{
+		size++;
+	}
+
+	sizeCalc.close();
+
 	this->movies = new string[size];
 
 	std::ifstream movieFile(fileName, fstream::in); //Create file
@@ -33,6 +45,8 @@ movieList::movieList(int size, string fileName)
 		movies[location] = line;
 		location++;
 	}
+	
+	movieFile.close();
 }
 
 string movieList::getMovie(int index)

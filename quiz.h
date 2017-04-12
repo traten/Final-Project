@@ -14,7 +14,6 @@
 #ifndef QUIZ_H
 #define QUIZ_H
 
-#define endl "\n"
 #include <cstdlib>
 #include <string>
 #include <iostream>

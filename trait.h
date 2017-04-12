@@ -38,6 +38,8 @@ private:
     double unpredictable;
     double adventure;
     double history;
+    bool does_a_dog_die;
+    
 public:
     Traits();
     double getTrait(string trait);

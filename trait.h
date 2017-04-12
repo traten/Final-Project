@@ -41,28 +41,28 @@ private:
 public:
     Traits();
     double getTrait(string trait);
-    void setTrait(double amountToSet);
+    void setTrait(string trait, double amountToSet);
     void modifyCompliments(string trait1, double modAmount);
 };
 
 Traits::Traits(){
-    this->violent = 50.0;
-    this->pansy = 50.0;
-    this->serious = 50.0;
-    this->carefree = 50.0;
-    this->imaginative = 50.0;
-    this->practical = 50.0;
-    this->religious = 50.0;
-    this->thrillseeker = 50.0;
-    this->playItSafe = 50.0;
-    this->empathetic = 50.0;
-    this->apathetic = 50.0;
-    this->optimistic = 50.0;
-    this->pessimistic = 50.0;
-    this->predictable = 50.0;
-    this->unpredictable = 50.0;
-    this->adventure = 50.0;
-    this->history = 50.0; 
+    this-> violent = 50.0;
+    this-> pansy = 50.0;
+    this-> serious = 50.0;
+    this-> carefree = 50.0;
+    this-> imaginative = 50.0;
+    this-> practical = 50.0;
+    this-> religious = 50.0;
+    this-> thrillseeker = 50.0;
+    this-> playItSafe = 50.0;
+    this-> empathetic = 50.0;
+    this-> apathetic = 50.0;
+    this-> optimistic = 50.0;
+    this-> pessimistic = 50.0;
+    this-> predictable = 50.0;
+    this-> unpredictable = 50.0;
+    this-> adventure = 50.0;
+    this-> history = 50.0;
 }
 
 double Traits::getTrait(string trait){
@@ -121,7 +121,7 @@ double Traits::getTrait(string trait){
 
 void Traits::modifyCompliments(string trait1, double modAmount){
     if (trait1.compare("violent")){
-        this->violent += modAmount;
+        violent += modAmount;
         this-> pansy -= modAmount;
     }
     if (trait1.compare("pansy")){
@@ -175,6 +175,18 @@ void Traits::modifyCompliments(string trait1, double modAmount){
     if (trait1.compare("unpredictable")){
         this->unpredictable += modAmount;
         this->predictable -= modAmount;
+    }
+}
+
+void Traits::setTrait(string trait, double modAmount){
+    if(trait.compare("adventure")){
+        this->adventure += modAmount;
+    }
+    if(trait.compare("religious")){
+        this->religious += modAmount;
+    }
+    if(trait.compare("history")){
+        this->history += modAmount;
     }
 }
 

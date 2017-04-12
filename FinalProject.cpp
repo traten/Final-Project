@@ -13,26 +13,65 @@ int main()
   //Creates linked list to hold user objects
   linked_list<user>* userList = new linked_list<user>;
 	
-	movieList violent("violent.txt");
-	movieList adventure("adventure.txt");
-	movieList imaginative("imaginative.txt");
-	movieList carefree("carefree.txt");
-	movieList pessimistic("pessimistic.txt");
-	movieList serious("serious.txt");
-	movieList playitsafe("playitsafe.txt");
-	movieList thriller("thriller.txt");
-	movieList history("history.txt");
-	movieList unpredictable("unpredictable.txt");
-	movieList violent75("violent75.txt");
-	movieList adventure75("adventure75.txt");
-	movieList imaginative75("imaginative75.txt");
-	movieList carefree75("carefree75.txt");
-	movieList pessimistic75("pessimistic75.txt");
-	movieList serious75("serious75.txt");
-	movieList playitsafe75("playitsafe75.txt");
-	movieList thriller75("thriller75.txt");
-	movieList history75("history75.txt");
-	movieList unpredictable("unpredictable75.txt");
+	if fileExists("violent.txt")
+		movieList violent("violent.txt");
+	
+	if fileExists("adventure.txt")
+		movieList adventure("adventure.txt");
+	
+	if fileExists("imaginative.txt")
+		movieList imaginative("imaginative.txt");
+	
+	if fileExists("carefree.txt")
+		movieList carefree("carefree.txt");
+	
+	if fileExists("pessimistic.txt")
+		movieList pessimistic("pessimistic.txt");
+	
+	if fileExists("serious.txt")
+		movieList serious("serious.txt");
+	
+	if fileExists("playitsafe.txt")
+		movieList playitsafe("playitsafe.txt");
+	
+	if fileExists("thriller.txt")
+		movieList thriller("thriller.txt");
+	
+	if fileExists("history.txt")
+		movieList history("history.txt");
+	
+	if fileExists("unpredictable.txt")
+		movieList unpredictable("unpredictable.txt");
+	
+	if fileExists("violent75.txt")
+		movieList violent75("violent75.txt");
+	
+	if fileExists("adventure75.txt")
+		movieList adventure75("adventure75.txt");
+	
+	if fileExists("imaginative75.txt")
+		movieList imaginative75("imaginative75.txt");
+	
+	if fileExists("carefree75.txt")
+		movieList carefree75("carefree75.txt");
+	
+	if fileExists("pessimistic75.txt")
+		movieList pessimistic75("pessimistic75.txt");
+	
+	if fileExists("serious75.txt")
+		movieList serious75("serious75.txt");
+	
+	if fileExists("playitsafe75.txt")
+		movieList playitsafe75("playitsafe75.txt");
+	
+	if fileExists("thriller75.txt")
+		movieList thriller75("thriller75.txt");
+	
+	if fileExists("history75.txt")
+		movieList history75("history75.txt");
+	
+	if fileExists("unpredictable75.txt")
+		movieList unpredictable("unpredictable75.txt");
 
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user

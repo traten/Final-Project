@@ -54,4 +54,10 @@ string movieList::getMovie(int index)
 	return this->movies[index];
 }
 
+//Returns true if filename can be found
+bool fileExists(const std::string& fileName) 
+{
+  std::ifstream testFile(fileName.c_str());
+  return (bool)testFile;
+}
 #endif

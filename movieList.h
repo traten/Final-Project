@@ -1,9 +1,8 @@
-#ifndef movieListTest
-#define movieListTest
+#ifndef	//source
+#define //source
 #include <string>
 #include <cstdlib>
 #include <iostream>
-#include <stack>
 #include <fstream>
 using namespace std;
 

@@ -276,9 +276,8 @@ bool loginMenu(linked_list<user>* userList)
 
 				if(username != tempName){
 					std::cout << "Username does not exist.\n" << std::endl;
-					break;
-
 				}
+			
 
 				std::cout << "Password: ";
 				std::cin >> password;
@@ -308,12 +307,17 @@ bool loginMenu(linked_list<user>* userList)
 			std::cout << "\nUsername: ";
 			std::cin >> username;
 			
+			bool usernameMatch = false;
 			for(size_t i = 0; i != userList->size(); i++){
 				user current_user = userList->item_at(i);
 				string current_string = current_user.getUsername();
 				if(current_string == username){
 					std::cout << "Username already taken. Try again." << std::endl;
+					usernameMatch = true;
 				}
+			}
+			if(usernameMatch == true){
+				break;
 			}
 
 			std::cout << "Password: ";

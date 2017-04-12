@@ -16,6 +16,9 @@ int main()
 	if (fileExists("violent.txt"))
 		movieList violent("violent.txt");
 	
+	if (fileExists("pansy.txt"))
+		movieList pansy("pansy.txt");
+	
 	if (fileExists("adventure.txt"))
 		movieList adventure("adventure.txt");
 	
@@ -72,6 +75,9 @@ int main()
 	
 	if (fileExists("unpredictable75.txt"))
 		movieList unpredictable("unpredictable75.txt");
+	
+	if (fileExists("pansy75.txt"))
+		movieList pansy75("pansy75.txt");
 
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user

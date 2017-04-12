@@ -322,7 +322,7 @@ bool loginMenu(linked_list<user>* userList)
 
 		case 3:{
       std::cout << "Thank you for using Movie Quiz" << std::endl;
-			return 0;
+			exit(0);
       break;
 
 		}

@@ -61,6 +61,7 @@ while(true) //this is used for creating new user
       case 4:
       std::cout << "Logged Out" << std::endl;
       logIn = false;
+      traitlist.resetTraits();
       break;
       case 5: //exits system entirely
       std::cout << "Thank you for using Movie Quiz" << std::endl;

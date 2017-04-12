@@ -1,5 +1,5 @@
-#ifndef	FinalProject
-#define FinalProject
+#ifndef	movieList
+#define movieList
 #include <string>
 #include <cstdlib>
 #include <iostream>

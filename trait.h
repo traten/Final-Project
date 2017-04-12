@@ -45,6 +45,7 @@ public:
     double getTrait(string trait);
     void setTrait(string trait, double amountToSet);
     void modifyCompliments(string trait1, double modAmount);
+    void resetTraits();
 };
 
 Traits::Traits(){
@@ -191,6 +192,26 @@ void Traits::setTrait(string trait, double modAmount){
     if(trait.compare("history")){
         this->history += modAmount;
     }
+}
+
+void Traits::resetTraits(){
+    this-> violent = 50.0;
+    this-> pansy = 50.0;
+    this-> serious = 50.0;
+    this-> carefree = 50.0;
+    this-> imaginative = 50.0;
+    this-> practical = 50.0;
+    this-> religious = 50.0;
+    this-> thrillseeker = 50.0;
+    this-> playItSafe = 50.0;
+    this-> empathetic = 50.0;
+    this-> apathetic = 50.0;
+    this-> optimistic = 50.0;
+    this-> pessimistic = 50.0;
+    this-> predictable = 50.0;
+    this-> unpredictable = 50.0;
+    this-> adventure = 50.0;
+    this-> history = 50.0;
 }
 
 #endif /* TRAIT_H */

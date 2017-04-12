@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <string>
+#include "quiz.h"
 MovieChooser test;
 
 //bool exit = false; //For exiting within log in menu
@@ -39,6 +40,7 @@ while(true) //this is used for creating new user
     {
       case 1: //quiz section
       std::cout << "Movie Quiz" << std::endl;
+      printQuiz();
       break;
       case 2: //Prints quiz
       std::cout << "Printing Quiz results" << std::endl;

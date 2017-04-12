@@ -308,11 +308,11 @@ bool loginMenu(linked_list<user>* userList)
 			std::cout << "\nUsername: ";
 			std::cin >> username;
 			
-			for(int i = 0; i != userList->size(); i++){
+			for(size_t i = 0; i != userList->size(); i++){
 				user current_user = userList->item_at(i);
 				string current_string = current_user.getUsername();
 				if(current_string == username){
-					cout << "Username already taken. Try again." << endl;
+					std::cout << "Username already taken. Try again." << std::endl;
 				}
 			}
 

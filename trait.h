@@ -47,7 +47,7 @@ public:
     void returnAll();
     string max1Trait();
     string max2Trait(string max);
-    string max3Trait(string max, string max2);
+    string max3Trait(string max1, string max2);
 };
 
 Traits::Traits(){
@@ -241,8 +241,7 @@ void Traits::returnAll(){
 
 string Traits::max1Trait(){
     int indexMax = 0;
-    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",
-                              "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
+    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
     vector<int> valuesVect;
     for(size_t i = 0; i < traitVect.size();i++){
         valuesVect.push_back(getTrait(traitVect[i]));
@@ -258,8 +257,7 @@ string Traits::max1Trait(){
 
 string Traits::max2Trait(string max){
     int indexMax2 = 0;
-    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",
-                              "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
+    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
     for(size_t i = 0; i < traitVect.size();i++){
         if(traitVect[i] == max)
         traitVect.erase(traitVect.begin() + i);
@@ -276,12 +274,9 @@ string Traits::max2Trait(string max){
 }
 string Traits::max3Trait(string max1, string max2){
     int indexMax3 = 0;
-    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",
-                                "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
+    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
     for(size_t i = 0; i < traitVect.size();i++){
-        if(traitVect[i] == max1)
-        traitVect.erase(traitVect.begin() + i);
-        if(traitVect[i] == max2)
+        if(traitVect[i] == max1 || traitVect[i] == max2)
         traitVect.erase(traitVect.begin() + i);
     }
     vector<int> valuesVect;

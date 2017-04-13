@@ -46,8 +46,8 @@ public:
     void resetTraits();
     void returnAll();
     string max1Trait();
-    string max2Trait();
-    string max3Trait();
+    string max2Trait(string max);
+    string max3Trait(string max);
 };
 
 Traits::Traits(){
@@ -122,6 +122,8 @@ int Traits::getTrait(string trait){
      if (trait=="history"){
         return this->history;
     }
+
+    return 0;
 }
 
 void Traits::modifyCompliments(string trait1, int modAmount){
@@ -256,7 +258,10 @@ string Traits::max1Trait(){
 string Traits::max2Trait(string max){
     int indexMax2 = 0;
     vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
-    traitVect.erase(indexMax);
+    for(size_t i = 0; i < traitVect.size();i++){
+        if(traitVect[i] == max)
+        traitVect.erase(traitVect.begin() + i);
+    }
     vector<int> valuesVect;
     for(size_t i = 0; i < traitVect.size();i++){
         valuesVect.push_back(getTrait(traitVect[i]));
@@ -264,11 +269,24 @@ string Traits::max2Trait(string max){
     for(size_t i = 0; i < valuesVect.size();i++){
         if(valuesVect[indexMax2] < valuesVect[i])
             indexMax2 = i;
-
     }
     return traitVect[indexMax2];
 }
-string Traits::max3Trait(){
-    return "hi";
+string Traits::max3Trait(string max){
+    int indexMax3 = 0;
+    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
+    for(size_t i = 0; i < traitVect.size();i++){
+        if(traitVect[i] == max)
+        traitVect.erase(traitVect.begin() + i);
+    }
+    vector<int> valuesVect;
+    for(size_t i = 0; i < traitVect.size();i++){
+        valuesVect.push_back(getTrait(traitVect[i]));
+    }
+    for(size_t i = 0; i < valuesVect.size();i++){
+        if(valuesVect[indexMax3] < valuesVect[i])
+            indexMax3 = i;
+    }
+    return traitVect[indexMax3];
 }
 #endif /* TRAIT_H */

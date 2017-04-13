@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/*
+/* 
  * File:   trait.h
  * Author: Claire
  *
@@ -16,203 +16,222 @@
 
 #include <string>
 #include <iostream>
-#include "movieList1.h"
 
 using namespace std;
 
 class Traits{
 private:
-    double violent;
-    double pansy;
-    double serious;
-    double carefree;
-    double imaginative;
-    double practical;
-    double religious;
-    double thrillseeker;
-    double playItSafe;
-    double empathetic;
-    double apathetic;
-    double optimistic;
-    double pessimistic;
-    double predictable;
-    double unpredictable;
-    double adventure;
-    double history;
-    bool does_a_dog_die;
-
+    int violent;
+    int pansy;
+    int serious;
+    int carefree;
+    int imaginative;
+    int practical;
+    int religious;
+    int thrillseeker;
+    int playItSafe;
+    int empathetic;
+    int apathetic;
+    int optimistic;
+    int pessimistic;
+    int predictable;
+    int unpredictable;
+    int adventure;
+    int history;
 public:
     Traits();
     double getTrait(string trait);
-    void setTrait(string trait, double amountToSet);
-    void modifyCompliments(string trait1, double modAmount);
+    void setTrait(string trait, int modAmount);
+    void modifyCompliments(string trait1, int modAmount);
     void resetTraits();
+    void returnAll();
 };
 
 Traits::Traits(){
-    this-> violent = 50.0;
-    this-> pansy = 50.0;
-    this-> serious = 50.0;
-    this-> carefree = 50.0;
-    this-> imaginative = 50.0;
-    this-> practical = 50.0;
-    this-> religious = 50.0;
-    this-> thrillseeker = 50.0;
-    this-> playItSafe = 50.0;
-    this-> empathetic = 50.0;
-    this-> apathetic = 50.0;
-    this-> optimistic = 50.0;
-    this-> pessimistic = 50.0;
-    this-> predictable = 50.0;
-    this-> unpredictable = 50.0;
-    this-> adventure = 50.0;
-    this-> history = 50.0;
+    this->violent = 50;
+    this->pansy = 50;
+    this-> serious = 50;
+    this-> carefree = 50;
+    this-> imaginative = 50;
+    this-> practical = 50;
+    this-> religious = 50;
+    this->thrillseeker = 50;
+    this-> playItSafe = 50;
+    this-> empathetic = 50;
+    this-> apathetic = 50;
+    this-> optimistic = 50;
+    this-> pessimistic = 50;
+    this-> predictable = 50;
+    this-> unpredictable = 50;
+    this-> adventure = 50;
+    this-> history = 50;
 }
 
 double Traits::getTrait(string trait){
-    if (trait.compare("violent")){
+    if (trait == "violent"){
         return this->violent;
     }
-    if (trait.compare("pansy")){
+    if (trait == "pansy"){
         return this->pansy;
     }
-    if (trait.compare("serious")){
+    if (trait == "serious"){
         return this->serious;
     }
-     if (trait.compare("carefree")){
+     if (trait == "carefree"){
         return this->carefree;
     }
-     if (trait.compare("imaginative")){
+     if (trait == "imaginative"){
         return this->imaginative;
     }
-     if (trait.compare("practical")){
+     if (trait == "practical"){
         return this->practical;
     }
-     if (trait.compare("religious")){
+     if (trait == "religious"){
         return this->religious;
     }
-     if (trait.compare("thrillseeker")){
+     if (trait =="thrillseeker"){
         return this->thrillseeker;
     }
-     if (trait.compare("playItSafe")){
+     if (trait =="playItSafe"){
         return this->playItSafe;
     }
-     if (trait.compare("empathetic")){
+     if (trait == "empathetic"){
         return this->empathetic;
     }
-     if (trait.compare("apathetic")){
+     if (trait=="apathetic"){
         return this->apathetic;
     }
-     if (trait.compare("optimistic")){
+     if (trait=="optimistic"){
         return this->optimistic;
     }
-     if (trait.compare("pessimistic")){
+     if (trait=="pessimistic"){
         return this->pessimistic;
     }
-     if (trait.compare("predictable")){
+     if (trait=="predictable"){
         return this->predictable;
     }
-     if (trait.compare("unpredictable")){
+     if (trait=="unpredictable"){
         return this->unpredictable;
     }
-     if (trait.compare("adventure")){
+     if (trait=="adventure"){
         return this->adventure;
     }
-     if (trait.compare("history")){
+     if (trait=="history"){
         return this->history;
     }
-    return 0;
 }
 
-void Traits::modifyCompliments(string trait1, double modAmount){
-    if (trait1.compare("violent")){
-        violent += modAmount;
+void Traits::modifyCompliments(string trait1, int modAmount){
+    
+    if (trait1 =="violent"){
+        this->violent += modAmount;
         this-> pansy -= modAmount;
     }
-    if (trait1.compare("pansy")){
+    if (trait1 =="pansy"){
         this->pansy += modAmount;
         this->violent -= modAmount;
     }
-    if(trait1.compare("serious")){
+    if(trait1=="serious"){
         this->serious += modAmount;
         this->carefree -= modAmount;
     }
-    if(trait1.compare("carefree")){
+    if(trait1=="carefree"){
         this->carefree += modAmount;
         this->serious -= modAmount;
     }
-    if(trait1.compare("imaginative")){
+    if(trait1=="imaginative"){
         this->imaginative += modAmount;
         this->practical -= modAmount;
     }
-    if(trait1.compare("practical")){
+    if(trait1==("practical")){
         this->practical += modAmount;
         this->imaginative -= modAmount;
     }
-    if(trait1.compare("thrillseeker")){
+    if(trait1==("thrillseeker")){
         this->thrillseeker += modAmount;
         this->playItSafe -= modAmount;
     }
-    if(trait1.compare("playItSafe")){
+    if(trait1==("playItSafe")){
         this->playItSafe += modAmount;
         this->thrillseeker -= modAmount;
     }
-    if (trait1.compare("empathetic")){
+    if (trait1==("empathetic")){
         this->empathetic += modAmount;
         this->apathetic -= modAmount;
     }
-    if (trait1.compare("apathetic")){
+    if (trait1==("apathetic")){
         this->apathetic += modAmount;
         this->empathetic -= modAmount;
     }
-    if (trait1.compare("optimistic")){
+    if (trait1==("optimistic")){
         this->optimistic += modAmount;
         this->pessimistic -= modAmount;
     }
-    if (trait1.compare("pessimistic")){
+    if (trait1==("pessimistic")){
         this->pessimistic += modAmount;
         this->optimistic -= modAmount;
     }
-    if (trait1.compare("predictable")){
+    if (trait1==("predictable")){
         this->predictable += modAmount;
         this->unpredictable -= modAmount;
     }
-    if (trait1.compare("unpredictable")){
+    if (trait1==("unpredictable")){
         this->unpredictable += modAmount;
         this->predictable -= modAmount;
     }
 }
 
-void Traits::setTrait(string trait, double modAmount){
-    if(trait.compare("adventure")){
+void Traits::setTrait(string trait, int modAmount){
+    if(trait==("adventure")){
         this->adventure += modAmount;
     }
-    if(trait.compare("religious")){
+    if(trait==("religious")){
         this->religious += modAmount;
     }
-    if(trait.compare("history")){
+    if(trait==("history")){
         this->history += modAmount;
     }
 }
 
 void Traits::resetTraits(){
-    this-> violent = 50.0;
-    this-> pansy = 50.0;
-    this-> serious = 50.0;
-    this-> carefree = 50.0;
-    this-> imaginative = 50.0;
-    this-> practical = 50.0;
-    this-> religious = 50.0;
-    this-> thrillseeker = 50.0;
-    this-> playItSafe = 50.0;
-    this-> empathetic = 50.0;
-    this-> apathetic = 50.0;
-    this-> optimistic = 50.0;
-    this-> pessimistic = 50.0;
-    this-> predictable = 50.0;
-    this-> unpredictable = 50.0;
-    this-> adventure = 50.0;
-    this-> history = 50.0;
+    this-> violent = 50;
+    this-> pansy = 50;
+    this-> serious = 50;
+    this-> carefree = 50;
+    this-> imaginative = 50;
+    this-> practical = 50;
+    this-> religious = 50;
+    this-> thrillseeker = 50;
+    this-> playItSafe = 50;
+    this-> empathetic = 50;
+    this-> apathetic = 50;
+    this-> optimistic = 50;
+    this-> pessimistic = 50;
+    this-> predictable = 50;
+    this-> unpredictable = 50;
+    this-> adventure = 50;
+    this-> history = 50;
 }
 
+void Traits::returnAll(){
+    cout << "Violent: " << getTrait("violent") <<endl;
+    cout << "Pansy: " << getTrait("pansy") <<endl;
+    cout << "Serious: " << getTrait("serious") <<endl;
+    cout << "Carefree: " << getTrait("carefree") <<endl;
+    cout << "Imaginative: " << getTrait("imaginative") <<endl;
+    cout << "Practical: " << getTrait("practical") <<endl;
+    cout << "Religious: " << getTrait("religious") <<endl;
+    cout << "Thrillseeker: " << getTrait("thrillseeker") <<endl;
+    cout << "Play It Safe: " << getTrait("playItSafe") <<endl;
+    cout << "Empathetic: " << getTrait("empathetic") <<endl;
+    cout << "Apathetic: " << getTrait("apathetic") <<endl;
+    cout << "Optimistic: " << getTrait("optimistic") <<endl;
+    cout << "Pessimistic: " << getTrait("pessimistic") <<endl;
+    cout << "Predictable: " << getTrait("predictable") <<endl;
+    cout << "Unpredictable: " << getTrait("unpredictable") <<endl;
+    cout << "Adventure: " << getTrait("adventure") <<endl;
+    cout << "History: " << getTrait("history") <<endl;
+          
+}
 #endif /* TRAIT_H */
+

@@ -111,8 +111,11 @@ int main()
 					
 					if (tempTwo = tempThree)
 					{
-						movies[moviesLocation] = tempThree;
-						moviesLocation++;
+						if (moviesLocation > 9}
+						{
+							movies[moviesLocation] = tempThree;
+							moviesLocation++;
+						}
 					}
 				}
 					

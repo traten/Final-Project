@@ -1,17 +1,3 @@
-/*string current_line = "";
-		int size = current_line.size();
-
-		//Loop below gets rid of all whitespace
-		for(int i = 0; i != size; i++){
-			char c = current_line[i];
-			if(isspace(c)){
-				current_line.erase(i,1);
-				i = -1;
-				size = current_line.size();
-			}
-		}
-*/
-
 
 #include "FinalProject1.h"
 #include "quiz.h"
@@ -22,7 +8,6 @@
 #include <string>
 MovieChooser test;
 
-//bool exit = false; //For exiting within log in menu
 int main()
 {
   //Creates linked list to hold user objects
@@ -70,8 +55,6 @@ int main()
 
       int tempTwoSize = tempTwo.size();
 
-      //std::cout << "TWO";
-
       //Loop below gets rid of all whitespace
       for(int z = 0; z != tempTwoSize; z++){
         char c = tempTwo[z];
@@ -90,11 +73,9 @@ int main()
 
           tempTemp = tempThree;
 
-          //std::cout << "THREE";
-
           int tempThreeSize = tempThree.size();
 
-          //Loop below gets rid of all whitespace TREVOR SUCKS PENIS
+          //Loop below gets rid of all whitespace 
           for(int z = 0; z != tempThreeSize; z++){
             char c = tempThree[z];
             if(isspace(c)){
@@ -490,12 +471,19 @@ int main()
 	}
 
 
+	string username = "username";
+	string filename = username + ".txt";
+	
+	ofstream out(filename);
+	
+	out << username << "'s Personalized Top 10 Movie List\n\n";
+	
+	for (int i = 0; i < 10; i++){
+		 out << i+1 << ": " << movies[i] << "\n";
+	}
+	
+	out.close();
 
-
-
-
-for (int i = 0; i < 10; i++)
-    std::cout << movies[i]<<std::endl;
 
 
   //This will be the menu used inside the first for loop
@@ -527,16 +515,16 @@ while(true) //this is used for creating new user
 				  std::cout << "Printing Quiz results" << std::endl;
 				  break;
 		      case '3': //Prints Programmers Top Picks
-				  std::cout << "Programmer's Top Picks: " << std::endl;
-				  std::cout << "Pulp Fiction" << std::endl;
-				  std::cout << "Django Unchained" << std::endl;
-				  std::cout << "Star Wars, the OG trilogy" << std::endl;
-				  std::cout << "Lord of the Rings" << std::endl;
-				  std::cout << "Toy Story" << std::endl;
-				  std::cout << "Fight Club" << std::endl;
-				  std::cout << "The Dark Knight" << std::endl;
-				  std::cout << "The Matrix" << std::endl;
-				  std::cout << "Hotel Rwanda" << std::endl;
+				  std::cout << " 1: Programmer's Top Picks: " << std::endl;
+				  std::cout << " 2: Pulp Fiction" << std::endl;
+				  std::cout << " 3: Django Unchained" << std::endl;
+				  std::cout << " 4: Star Wars, the OG trilogy" << std::endl;
+				  std::cout << " 5: Lord of the Rings" << std::endl;
+				  std::cout << " 6: Toy Story" << std::endl;
+				  std::cout << " 7: Fight Club" << std::endl;
+				  std::cout << " 8: The Dark Knight" << std::endl;
+				  std::cout << " 9: The Matrix" << std::endl;
+				  std::cout << "10: Hotel Rwanda" << std::endl;
 				  break;
 		      case '4': //logs out of system
 				  std::cout << "Logged Out" << std::endl;
@@ -547,7 +535,7 @@ while(true) //this is used for creating new user
 				  std::cout << "Thank you for using Movie Quiz" << std::endl;
 				  return 0;
 		      default: 	//If its not 1-5
-				  std::cout << "\nIncorrect input: Please input a number 1 through 3" << std::endl;
+				  std::cout << "\nIncorrect input: Please input a number 1 through 5" << std::endl;
 				  break;
 
 	  	     }

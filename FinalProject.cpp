@@ -13,7 +13,7 @@ int main()
   //Creates linked list to hold user objects
   linked_list<user>* userList = new linked_list<user>;
 	
-	if (fileExists("violent.txt"))
+	/*if (fileExists("violent.txt"))
 		movieList violent("violent.txt");
 	
 	if (fileExists("pansy.txt"))
@@ -77,7 +77,16 @@ int main()
 		movieList unpredictable("unpredictable75.txt");
 	
 	if (fileExists("pansy75.txt"))
-		movieList pansy75("pansy75.txt");
+		movieList pansy75("pansy75.txt");*/
+	
+	
+	movieList movieOne("thriller.txt");
+	movieList movieTwo("violent.txt");
+	movieList movieThree("carefree.txt");
+	
+	for (
+		
+	
 
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
@@ -108,6 +117,13 @@ while(true) //this is used for creating new user
     {
       case 1: //quiz section
       std::cout << "Movie Quiz" << std::endl;
+		
+		    
+	switch (traitOne)
+		case ("violent"):
+		
+		
+		
       break;
       case 2: //Prints quiz
       std::cout << "Printing Quiz results" << std::endl;

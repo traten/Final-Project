@@ -40,7 +40,7 @@ private:
     int history;
 public:
     Traits();
-    double getTrait(string trait);
+    int getTrait(string trait);
     void setTrait(string trait, int modAmount);
     void modifyCompliments(string trait1, int modAmount);
     void resetTraits();
@@ -67,7 +67,7 @@ Traits::Traits(){
     this-> history = 50;
 }
 
-double Traits::getTrait(string trait){
+int Traits::getTrait(string trait){
     if (trait == "violent"){
         return this->violent;
     }

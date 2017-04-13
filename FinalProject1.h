@@ -222,20 +222,20 @@ bool loginMenu(linked_list<user>* userList)
 	std::cout << "Choice: ";
 
 	string userInput = "";
-	
-	
-	
+
+
+
 	getline(std::cin, userInput);
-	
+
 	if(userInput.size()!= 1){ //If string is not only one character, print error.
-			
+
 			std::cout << "\nIncorrect input: Please input a number 1 through 3\n" << std::endl;
 			continue;
-			
+
 	}
-		
-	char choice = userInput[0]; //Gets character at index 0 
-	
+
+	char choice = userInput[0]; //Gets character at index 0
+
 	switch(choice){
 
 		case '1':
@@ -254,19 +254,19 @@ bool loginMenu(linked_list<user>* userList)
 					break;
 				}
 
-				
+
 			for(int i = 0; i != userListSize; i++){
 
 				user tempUser = userList->item_at(i);
 
 				string tempName = tempUser.getUsername();
 
-				
+
 				if(username != tempName){
 					std::cout << "Username does not exist.\n" << std::endl;
 					break;
 				}
-			
+
 
 				std::cout << "Password: ";
 				getline(std::cin, password);
@@ -293,7 +293,7 @@ bool loginMenu(linked_list<user>* userList)
 
 			std::cout << "\nUsername: ";
 			getline(std::cin, username);
-			
+
 			bool usernameMatch = false;
 			for(size_t i = 0; i != userList->size(); i++){
 				user current_user = userList->item_at(i);
@@ -326,7 +326,7 @@ bool loginMenu(linked_list<user>* userList)
 			break;
 
 		}
-		
+
 		default:
 		{
 			std::cout << "\nIncorrect input: Please input a number 1 through 3\n" << std::endl;

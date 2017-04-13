@@ -1,6 +1,6 @@
 /*string current_line = "";
 		int size = current_line.size();
-		
+
 		//Loop below gets rid of all whitespace
 		for(int i = 0; i != size; i++){
 			char c = current_line[i];
@@ -8,7 +8,7 @@
 				current_line.erase(i,1);
 				i = -1;
 				size = current_line.size();
-			}	
+			}
 		}
 */
 
@@ -16,7 +16,7 @@
 #include "FinalProject1.h"
 #include "quiz.h"
 #include "trait.h"
-#include "movieList.h"
+#include "movieList1.h"
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -27,119 +27,101 @@ int main()
 {
   //Creates linked list to hold user objects
   linked_list<user>* userList = new linked_list<user>;
-	
-	/*if (fileExists("violent.txt"))
-		movieList violent("violent.txt");
-	
-	if (fileExists("pansy.txt"))
-		movieList pansy("pansy.txt");
-	
-	if (fileExists("adventure.txt"))
-		movieList adventure("adventure.txt");
-	
-	if (fileExists("imaginative.txt"))
-		movieList imaginative("imaginative.txt");
-	
-	if (fileExists("carefree.txt"))
-		movieList carefree("carefree.txt");
-	
-	if (fileExists("pessimistic.txt"))
-		movieList pessimistic("pessimistic.txt");
-	
-	if (fileExists("serious.txt"))
-		movieList serious("serious.txt");
-	
-	if (fileExists("playitsafe.txt"))
-		movieList playitsafe("playitsafe.txt");
-	
-	if (fileExists("thriller.txt"))
-		movieList thriller("thriller.txt");
-	
-	if (fileExists("history.txt"))
-		movieList history("history.txt");
-	
-	if (fileExists("unpredictable.txt"))
-		movieList unpredictable("unpredictable.txt");
-	
-	if (fileExists("violent75.txt"))
-		movieList violent75("violent75.txt");
-	
-	if (fileExists("adventure75.txt"))
-		movieList adventure75("adventure75.txt");
-	
-	if (fileExists("imaginative75.txt"))
-		movieList imaginative75("imaginative75.txt");
-	
-	if (fileExists("carefree75.txt"))
-		movieList carefree75("carefree75.txt");
-	
-	if (fileExists("pessimistic75.txt"))
-		movieList pessimistic75("pessimistic75.txt");
-	
-	if (fileExists("serious75.txt"))
-		movieList serious75("serious75.txt");
-	
-	if (fileExists("playitsafe75.txt"))
-		movieList playitsafe75("playitsafe75.txt");
-	
-	if (fileExists("thriller75.txt"))
-		movieList thriller75("thriller75.txt");
-	
-	if (fileExists("history75.txt"))
-		movieList history75("history75.txt");
-	
-	if (fileExists("unpredictable75.txt"))
-		movieList unpredictable("unpredictable75.txt");
-	
-	if (fileExists("pansy75.txt"))
-		movieList pansy75("pansy75.txt");*/
-	
-	
-	movieList movieOne("thriller.txt");
-	movieList movieTwo("violent.txt");
-	movieList movieThree("carefree.txt");
-	
+
+	movieList movieOne("Thrillseeker.txt");
+	movieList movieTwo("Violent.txt");
+	movieList movieThree("Serious.txt");
+
 	int oneSize = movieOne.getCapacity();
-	int twoSize = movieTwo.getCapacity()
-	int threeSize = movieThree.getCapacity()
-	
-	int tempOne;
-	int tempTwo;
-	int tempThree;
-	
-	int movies[] = new int[10];
+	int twoSize = movieTwo.getCapacity();
+	int threeSize = movieThree.getCapacity();
+
+	std::string tempOne;
+	std::string tempTwo;
+	std::string tempThree;
+
+  std::string tempTemp;
+
+	string * movies = new string[10];
 	int moviesLocation = 0;
-	
+
 	for (int i = 0; i < oneSize; i++)
 	{
-		temp = movieOne.getMovie(i);
-		
+		tempOne = movieOne.getMovie(i);
+
+
+		int tempOneSize = tempOne.size();
+
+    //std::cout << "ONE";
+
+		//Loop below gets rid of all whitespace
+		for(int z = 0; z != tempOneSize; z++){
+			char c = tempOne[z];
+			if(isspace(c)){
+				tempOne.erase(z,1);
+				z = -1;
+				tempOneSize = tempOne.size();
+			}
+		}
+
 		for (int j = 0; j < twoSize; j++)
 		{
 			tempTwo = movieTwo.getMovie(j);
-			
-			if (temp == tempTwo)
+
+      int tempTwoSize = tempTwo.size();
+
+      //std::cout << "TWO";
+
+      //Loop below gets rid of all whitespace PENIS
+      for(int z = 0; z != tempTwoSize; z++){
+        char c = tempTwo[z];
+        if(isspace(c)){
+          tempTwo.erase(z,1);
+          z = -1;
+          tempTwoSize = tempTwo.size();
+        }
+      }
+
+			if (tempOne == tempTwo)
 			{
 				for (int k = 0; k < threeSize; k++)
 				{
-					tempThree = movieThree.get(k);
-					
-					if (tempTwo = tempThree)
+					tempThree = movieThree.getMovie(k);
+
+          tempTemp = tempThree;
+
+          //std::cout << "THREE";
+
+          int tempThreeSize = tempThree.size();
+
+          //Loop below gets rid of all whitespace TREVOR SUCKS PENIS
+          for(int z = 0; z != tempThreeSize; z++){
+            char c = tempThree[z];
+            if(isspace(c)){
+              tempThree.erase(z,1);
+              z = -1;
+              tempThreeSize = tempThree.size();
+            }
+          }
+          //std::cout << "TEMP TWO: " << tempTwo << endl;
+          //std::cout << "TEMP THR: " << tempThree << endl;
+
+					if (tempTwo == tempThree)
 					{
-						if (moviesLocation > 9}
+						if (moviesLocation < 10)
 						{
-							movies[moviesLocation] = tempThree;
+							movies[moviesLocation] = tempTemp;
 							moviesLocation++;
 						}
 					}
 				}
-					
+
 			}
 		}
 	}
-	
-		
-	
+for (int i = 0; i < 10; i++)
+    std::cout << movies[i]<<std::endl;
+
 
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
@@ -158,7 +140,7 @@ while(true) //this is used for creating new user
 
 		}
 
-		char choice = userInput.at(0); //Gets character at index 0 
+		char choice = userInput.at(0); //Gets character at index 0
 
 
 		switch(choice)
@@ -189,7 +171,7 @@ while(true) //this is used for creating new user
 		      case '5': //exits system entirely
 				  std::cout << "Thank you for using Movie Quiz" << std::endl;
 				  return 0;
-		      default: 	//If its not 1-5		
+		      default: 	//If its not 1-5
 				  std::cout << "\nIncorrect input: Please input a number 1 through 3" << std::endl;
 				  break;
 

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   trait.h
  * Author: Claire
  *
@@ -119,10 +119,11 @@ double Traits::getTrait(string trait){
      if (trait=="history"){
         return this->history;
     }
+    return 0;
 }
 
 void Traits::modifyCompliments(string trait1, int modAmount){
-    
+
     if (trait1 =="violent"){
         this->violent += modAmount;
         this-> pansy -= modAmount;
@@ -231,7 +232,6 @@ void Traits::returnAll(){
     cout << "Unpredictable: " << getTrait("unpredictable") <<endl;
     cout << "Adventure: " << getTrait("adventure") <<endl;
     cout << "History: " << getTrait("history") <<endl;
-          
+
 }
 #endif /* TRAIT_H */
-

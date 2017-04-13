@@ -47,7 +47,7 @@ public:
     void returnAll();
     string max1Trait();
     string max2Trait(string max);
-    string max3Trait(string max);
+    string max3Trait(string max1, string max2);
 };
 
 Traits::Traits(){
@@ -272,11 +272,11 @@ string Traits::max2Trait(string max){
     }
     return traitVect[indexMax2];
 }
-string Traits::max3Trait(string max){
+string Traits::max3Trait(string max1, string max2){
     int indexMax3 = 0;
     vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
     for(size_t i = 0; i < traitVect.size();i++){
-        if(traitVect[i] == max)
+        if(traitVect[i] == max1 || traitVect[i] == max2)
         traitVect.erase(traitVect.begin() + i);
     }
     vector<int> valuesVect;

@@ -6,7 +6,7 @@
 
 /*
  * File:   quiz.h
- * Author: Claire
+ * Author: Claire and a little bit of nico
  *
  * Created on March 31, 2017, 4:03 PM
  */

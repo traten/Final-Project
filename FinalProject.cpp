@@ -129,66 +129,57 @@ int main()
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
-  //if(exit == true){
-  //		return 0;
-  //		}
+	cout << "\nWelcome to Movie Quiz!\n" << endl;
+	bool logIn = loginMenu(userList);
 
-  bool logIn = loginMenu(userList);
+	cout << "\n~~~~MOVIE QUIZ~~~~" << endl;
+	while(logIn) //used for when user is inside log in page
+	{
+	    	string userInput = menu();
+		if(userInput.size()!= 1){ //If string is not only one character, print error.
+
+			cout << "Incorrect input please input a number 1 through 5" << endl;
+			continue;
+
+		}
+
+		char choice = userInput.at(0); //Gets character at index 0 
 
 
-  while(logIn) //used for when user is inside log in page
-  {
-    int choice = menu();
-    if (std::cin.fail())
-    {
-      std::cin.clear();
-      std::cin.ignore(100,'\n');
-    }
-    if(!checkInput(choice))
-    {
-      std::cout << "Incorrect input please input a number 1 through 5" << std::endl;
-      continue;
-    }
-    else //correct input switch
-    {
-    switch(choice)
-    {
-      case 1: //quiz section
-      std::cout << "Movie Quiz" << std::endl;
-		
-		    
-	switch (traitOne)
-		case ("violent"):
-		
-		
-		
-      break;
-      case 2: //Prints quiz
-      std::cout << "Printing Quiz results" << std::endl;
-      break;
-      case 3: //logs out of system
-      std::cout << "Programmer's Top Picks: " << std::endl;
-      std::cout << "Pulp Fiction" << std::endl;
-      std::cout << "Django Unchained" << std::endl;
-      std::cout << "Star Wars, the OG trilogy" << std::endl;
-      std::cout << "Lord of the Rings" << std::endl;
-      std::cout << "Toy Story" << std::endl;
-      std::cout << "Fight Club" << std::endl;
-      std::cout << "The Dark Knight" << std::endl;
-      std::cout << "The Matrix" << std::endl;
-      std::cout << "Hotel Rwanda" << std::endl;
-      break;
-      case 4:
-      std::cout << "Logged Out" << std::endl;
-      logIn = false;
-      traitlist.resetTraits();
-      break;
-      case 5: //exits system entirely
-      std::cout << "Thank you for using Movie Quiz" << std::endl;
-      return 0;
-    }
-  }
-}
+		switch(choice)
+	   	{
+		      case '1': //quiz section
+				  std::cout << "Movie Quiz" << std::endl;
+				  break;
+		      case '2': //Prints quiz
+				  std::cout << "Printing Quiz results" << std::endl;
+				  break;
+		      case '3': //Prints Programmers Top Picks
+				  std::cout << "Programmer's Top Picks: " << std::endl;
+				  std::cout << "Pulp Fiction" << std::endl;
+				  std::cout << "Django Unchained" << std::endl;
+				  std::cout << "Star Wars, the OG trilogy" << std::endl;
+				  std::cout << "Lord of the Rings" << std::endl;
+				  std::cout << "Toy Story" << std::endl;
+				  std::cout << "Fight Club" << std::endl;
+				  std::cout << "The Dark Knight" << std::endl;
+				  std::cout << "The Matrix" << std::endl;
+				  std::cout << "Hotel Rwanda" << std::endl;
+				  break;
+		      case '4': //logs out of system
+				  std::cout << "Logged Out" << std::endl;
+				  logIn = false;
+				  traitlist.resetTraits();
+				  break;
+		      case '5': //exits system entirely
+				  std::cout << "Thank you for using Movie Quiz" << std::endl;
+				  return 0;
+		      default: 	//If its not 1-5		
+				  std::cout << "Incorrect input: Please input a number 1 through 3" << std::endl;
+				  break;
+
+	  	     }
+	 }
 }
 return 0;
 }

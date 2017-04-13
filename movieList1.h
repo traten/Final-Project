@@ -10,10 +10,12 @@ class movieList
 {
 	private:
 		string * movies;
+		int capacity;
 
 	public:
 		movieList(string fileName);
 		string getMovie(int index);
+		int getCapacity();
 };
 
 movieList::movieList(std::string fileName)
@@ -27,6 +29,8 @@ movieList::movieList(std::string fileName)
 	{
 		size++;
 	}
+	
+	capacity = size;
 
 	sizeCalc.close();
 
@@ -52,6 +56,11 @@ movieList::movieList(std::string fileName)
 string movieList::getMovie(int index)
 {
 	return this->movies[index];
+}
+
+int movieList::getCapacity()
+{
+	return this->capacity;
 }
 
 //Returns true if filename can be found

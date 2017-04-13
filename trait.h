@@ -13,7 +13,7 @@
 
 #ifndef TRAIT_H
 #define TRAIT_H
-
+#include<vector>
 #include <string>
 #include <iostream>
 
@@ -45,6 +45,9 @@ public:
     void modifyCompliments(string trait1, int modAmount);
     void resetTraits();
     void returnAll();
+    string max1Trait();
+    string max2Trait();
+    string max3Trait();
 };
 
 Traits::Traits(){
@@ -119,7 +122,6 @@ int Traits::getTrait(string trait){
      if (trait=="history"){
         return this->history;
     }
-    return 0;
 }
 
 void Traits::modifyCompliments(string trait1, int modAmount){
@@ -233,5 +235,40 @@ void Traits::returnAll(){
     cout << "Adventure: " << getTrait("adventure") <<endl;
     cout << "History: " << getTrait("history") <<endl;
 
+}
+
+string Traits::max1Trait(){
+    int indexMax = 0;
+    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
+    vector<int> valuesVect;
+    for(size_t i = 0; i < traitVect.size();i++){
+        valuesVect.push_back(getTrait(traitVect[i]));
+    }
+    for(size_t i = 0; i < valuesVect.size();i++){
+        if(valuesVect[indexMax] < valuesVect[i])
+            indexMax = i;
+
+    }
+    return traitVect[indexMax];
+
+}
+
+string Traits::max2Trait(string max){
+    int indexMax2 = 0;
+    vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker", "playItSafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
+    traitVect.erase(indexMax);
+    vector<int> valuesVect;
+    for(size_t i = 0; i < traitVect.size();i++){
+        valuesVect.push_back(getTrait(traitVect[i]));
+    }
+    for(size_t i = 0; i < valuesVect.size();i++){
+        if(valuesVect[indexMax2] < valuesVect[i])
+            indexMax2 = i;
+
+    }
+    return traitVect[indexMax2];
+}
+string Traits::max3Trait(){
+    return "hi";
 }
 #endif /* TRAIT_H */

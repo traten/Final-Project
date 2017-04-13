@@ -1,3 +1,18 @@
+/*string current_line = "";
+		int size = current_line.size();
+		
+		//Loop below gets rid of all whitespace
+		for(int i = 0; i != size; i++){
+			char c = current_line[i];
+			if(isspace(c)){
+				current_line.erase(i,1);
+				i = -1;
+				size = current_line.size();
+			}	
+		}
+*/
+
+
 #include "FinalProject1.h"
 #include "quiz.h"
 #include "trait.h"

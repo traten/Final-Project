@@ -40,7 +40,9 @@ int main()
 	std::string tempTwo;
 	std::string tempThree;
 
-  std::string tempTemp;
+  	std::string tempTemp;
+
+  	bool containsMovie = false;
 
 	string * movies = new string[10];
 	int moviesLocation = 0;
@@ -51,8 +53,6 @@ int main()
 
 
 		int tempOneSize = tempOne.size();
-
-    //std::cout << "ONE";
 
 		//Loop below gets rid of all whitespace
 		for(int z = 0; z != tempOneSize; z++){
@@ -72,7 +72,7 @@ int main()
 
       //std::cout << "TWO";
 
-      //Loop below gets rid of all whitespace PENIS
+      //Loop below gets rid of all whitespace
       for(int z = 0; z != tempTwoSize; z++){
         char c = tempTwo[z];
         if(isspace(c)){
@@ -103,8 +103,6 @@ int main()
               tempThreeSize = tempThree.size();
             }
           }
-          //std::cout << "TEMP TWO: " << tempTwo << endl;
-          //std::cout << "TEMP THR: " << tempThree << endl;
 
 					if (tempTwo == tempThree)
 					{
@@ -119,6 +117,383 @@ int main()
 			}
 		}
 	}
+
+	if (moviesLocation < 10)
+	{
+		for (int i = 0; i < oneSize; i++)
+		{
+			tempOne = movieOne.getMovie(i);
+
+
+			int tempOneSize = tempOne.size();
+
+			//Loop below gets rid of all whitespace
+			for(int z = 0; z != tempOneSize; z++){
+				char c = tempOne[z];
+				if(isspace(c)){
+					tempOne.erase(z,1);
+					z = -1;
+					tempOneSize = tempOne.size();
+				}	
+			}
+
+			for (int j = 0; j < twoSize; j++)
+			{	
+				tempTwo = movieTwo.getMovie(j);
+
+				tempTemp = tempTwo;
+
+      			int tempTwoSize = tempTwo.size();
+
+      			//Loop below gets rid of all whitespace
+      			for(int z = 0; z != tempTwoSize; z++){
+        			char c = tempTwo[z];
+        			if(isspace(c)){
+          				tempTwo.erase(z,1);
+          				z = -1;
+          				tempTwoSize = tempTwo.size();
+          			}
+        		}
+
+        		//checking if movies contains the current movie
+        		for (int y = 0; y < 10; y ++)
+        		{
+        			string checkTemp = movies[y];
+
+        			int tempSize = checkTemp.size();
+
+      				//Loop below gets rid of all whitespace
+      				for(int x = 0; x != tempSize; x++){
+        				char c = checkTemp[x];
+        				if(isspace(c)){
+          					checkTemp.erase(x,1);
+          					x = -1;
+          					tempSize = checkTemp.size();
+          				}
+        			}
+
+        			if (checkTemp == tempTwo)
+        			{
+        				containsMovie = true;
+        			}
+        		}
+
+        		if ( (tempOne == tempTwo) && (moviesLocation < 10) && (!containsMovie))
+        		{
+        			movies[moviesLocation] = tempTemp;
+					moviesLocation++;
+        		}
+
+        		containsMovie = false;
+        	}
+      	}
+	}
+
+	if (moviesLocation < 10)
+	{
+		for (int i = 0; i < oneSize; i++)
+		{
+			tempOne = movieOne.getMovie(i);
+
+
+			int tempOneSize = tempOne.size();
+
+			//Loop below gets rid of all whitespace
+			for(int z = 0; z != tempOneSize; z++){
+				char c = tempOne[z];
+				if(isspace(c)){
+					tempOne.erase(z,1);
+					z = -1;
+					tempOneSize = tempOne.size();
+				}	
+			}
+
+			for (int j = 0; j < threeSize; j++)
+			{	
+				tempThree = movieThree.getMovie(j);
+
+				tempTemp = tempThree;
+
+      			int tempThreeSize = tempThree.size();
+
+      			//Loop below gets rid of all whitespace
+      			for(int z = 0; z != tempThreeSize; z++){
+        			char c = tempThree[z];
+        			if(isspace(c)){
+          				tempThree.erase(z,1);
+          				z = -1;
+          				tempThreeSize = tempThree.size();
+          			}
+        		}
+
+        		//checking if movies contains the current movie
+        		for (int y = 0; y < 10; y ++)
+        		{
+        			string checkTemp = movies[y];
+
+        			int tempSize = checkTemp.size();
+
+      				//Loop below gets rid of all whitespace
+      				for(int x = 0; x != tempSize; x++){
+        				char c = checkTemp[x];
+        				if(isspace(c)){
+          					checkTemp.erase(x,1);
+          					x = -1;
+          					tempSize = checkTemp.size();
+          				}
+        			}
+
+        			if (checkTemp == tempThree)
+        			{
+        				containsMovie = true;
+        			}
+        		}
+
+        		if ( (tempOne == tempThree) && (moviesLocation < 10) && (!containsMovie))
+        		{
+        			movies[moviesLocation] = tempTemp;
+					moviesLocation++;
+        		}
+
+        		containsMovie = false;
+        	}
+      	}
+	}
+
+	if (moviesLocation < 10)
+	{
+		for (int i = 0; i < twoSize; i++)
+		{
+			tempTwo = movieTwo.getMovie(i);
+
+			int tempTwoSize = tempTwo.size();
+
+			//Loop below gets rid of all whitespace
+			for(int z = 0; z != tempTwoSize; z++){
+				char c = tempTwo[z];
+				if(isspace(c)){
+					tempTwo.erase(z,1);
+					z = -1;
+					tempTwoSize = tempTwo.size();
+				}	
+			}
+
+			for (int j = 0; j < threeSize; j++)
+			{	
+				tempThree = movieThree.getMovie(j);
+
+				tempTemp = tempThree;
+
+      			int tempThreeSize = tempThree.size();
+
+      			//Loop below gets rid of all whitespace
+      			for(int z = 0; z != tempThreeSize; z++){
+        			char c = tempThree[z];
+        			if(isspace(c)){
+          				tempThree.erase(z,1);
+          				z = -1;
+          				tempThreeSize = tempThree.size();
+          			}
+        		}
+
+        		//checking if movies contains the current movie
+        		for (int y = 0; y < 10; y ++)
+        		{
+        			string checkTemp = movies[y];
+
+        			int tempSize = checkTemp.size();
+
+      				//Loop below gets rid of all whitespace
+      				for(int x = 0; x != tempSize; x++){
+        				char c = checkTemp[x];
+        				if(isspace(c)){
+          					checkTemp.erase(x,1);
+          					x = -1;
+          					tempSize = checkTemp.size();
+          				}
+        			}
+
+        			if (checkTemp == tempThree)
+        			{
+        				containsMovie = true;
+        			}
+        		}
+
+        		if ( (tempTwo == tempThree) && (moviesLocation < 10) && (!containsMovie))
+        		{
+        			movies[moviesLocation] = tempTemp;
+					moviesLocation++;
+        		}
+
+        		containsMovie = false;
+        	}
+      	}
+	}
+
+	if (moviesLocation < 10)
+	{
+		for (int i = 0; i < oneSize; i++)
+		{
+			tempOne = movieOne.getMovie(i);
+
+			tempTemp = tempOne;
+
+			int tempOneSize = tempOne.size();
+
+			//Loop below gets rid of all whitespace
+			for(int z = 0; z != tempOneSize; z++){
+				char c = tempOne[z];
+				if(isspace(c)){
+					tempOne.erase(z,1);
+					z = -1;
+					tempOneSize = tempOne.size();
+				}	
+			}
+
+			//checking if movies contains the current movie
+        	for (int y = 0; y < 10; y ++)
+        	{
+        		string checkTemp = movies[y];
+
+        		int tempSize = checkTemp.size();
+
+      			//Loop below gets rid of all whitespace
+      			for(int x = 0; x != tempSize; x++){
+        			char c = checkTemp[x];
+        			if(isspace(c)){
+          				checkTemp.erase(x,1);
+          				x = -1;
+          				tempSize = checkTemp.size();
+          			}
+        		}
+
+        		if (checkTemp == tempOne)
+        		{
+        			containsMovie = true;
+        		}
+        	}
+
+        	if ( (moviesLocation < 10) && (!containsMovie))
+        	{
+        		movies[moviesLocation] = tempTemp;
+				moviesLocation++;
+        	}
+
+				containsMovie = false;
+		}
+	}
+
+	if (moviesLocation < 10)
+	{
+		for (int i = 0; i < twoSize; i++)
+		{
+			tempTwo = movieTwo.getMovie(i);
+
+			tempTemp = tempTwo;
+
+			int tempTwoSize = tempTwo.size();
+
+			//Loop below gets rid of all whitespace
+			for(int z = 0; z != tempTwoSize; z++){
+				char c = tempTwo[z];
+				if(isspace(c)){
+					tempTwo.erase(z,1);
+					z = -1;
+					tempTwoSize = tempTwo.size();
+				}	
+			}
+
+			//checking if movies contains the current movie
+        	for (int y = 0; y < 10; y ++)
+        	{
+        		string checkTemp = movies[y];
+
+        		int tempSize = checkTemp.size();
+
+      			//Loop below gets rid of all whitespace
+      			for(int x = 0; x != tempSize; x++){
+        			char c = checkTemp[x];
+        			if(isspace(c)){
+          				checkTemp.erase(x,1);
+          				x = -1;
+          				tempSize = checkTemp.size();
+          			}
+        		}
+
+        		if (checkTemp == tempTwo)
+        		{
+        			containsMovie = true;
+        		}
+        	}
+
+        	if ( (moviesLocation < 10) && (!containsMovie))
+        	{
+        		movies[moviesLocation] = tempTemp;
+				moviesLocation++;
+        	}
+
+				containsMovie = false;
+		}
+	}
+
+	if (moviesLocation < 10)
+	{
+		for (int i = 0; i < threeSize; i++)
+		{
+			tempThree = movieThree.getMovie(i);
+
+			tempTemp = tempThree;
+
+			int tempThreeSize = tempThree.size();
+
+			//Loop below gets rid of all whitespace
+			for(int z = 0; z != tempThreeSize; z++){
+				char c = tempThree[z];
+				if(isspace(c)){
+					tempThree.erase(z,1);
+					z = -1;
+					tempThreeSize = tempThree.size();
+				}	
+			}
+
+			//checking if movies contains the current movie
+        	for (int y = 0; y < 10; y ++)
+        	{
+        		string checkTemp = movies[y];
+
+        		int tempSize = checkTemp.size();
+
+      			//Loop below gets rid of all whitespace
+      			for(int x = 0; x != tempSize; x++){
+        			char c = checkTemp[x];
+        			if(isspace(c)){
+          				checkTemp.erase(x,1);
+          				x = -1;
+          				tempSize = checkTemp.size();
+          			}
+        		}
+
+        		if (checkTemp == tempThree)
+        		{
+        			containsMovie = true;
+        		}
+        	}
+
+        	if ( (moviesLocation < 10) && (!containsMovie))
+        	{
+        		movies[moviesLocation] = tempTemp;
+				moviesLocation++;
+        	}
+
+				containsMovie = false;
+		}
+	}
+
+
+
+
+
+
 for (int i = 0; i < 10; i++)
     std::cout << movies[i]<<std::endl;
 
@@ -172,7 +547,7 @@ while(true) //this is used for creating new user
 				  std::cout << "Thank you for using Movie Quiz" << std::endl;
 				  return 0;
 		      default: 	//If its not 1-5
-				  std::cout << "\nIncorrect input: Please input a number 1 through 5" << std::endl;
+				  std::cout << "\nIncorrect input: Please input a number 1 through 3" << std::endl;
 				  break;
 
 	  	     }

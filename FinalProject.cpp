@@ -84,7 +84,42 @@ int main()
 	movieList movieTwo("violent.txt");
 	movieList movieThree("carefree.txt");
 	
-	int oneSize = movieOne.
+	int oneSize = movieOne.getCapacity();
+	int twoSize = movieTwo.getCapacity()
+	int threeSize = movieThree.getCapacity()
+	
+	int tempOne;
+	int tempTwo;
+	int tempThree;
+	
+	int movies[] = new int[10];
+	int moviesLocation = 0;
+	
+	for (int i = 0; i < oneSize; i++)
+	{
+		temp = movieOne.getMovie(i);
+		
+		for (int j = 0; j < twoSize; j++)
+		{
+			tempTwo = movieTwo.getMovie(j);
+			
+			if (temp == tempTwo)
+			{
+				for (int k = 0; k < threeSize; k++)
+				{
+					tempThree = movieThree.get(k);
+					
+					if (tempTwo = tempThree)
+					{
+						movies[moviesLocation] = tempThree;
+						moviesLocation++;
+					}
+				}
+					
+			}
+		}
+	}
+	
 		
 	
 

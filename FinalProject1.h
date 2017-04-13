@@ -199,30 +199,17 @@ public:
   void menu();
 };
 
-int menu()
+string menu()
 {
-  int userInput = 0;
-  std::cout<< "1. Take Quiz" << std::endl;
+  string userInput = "";
+  std::cout<< "\n1. Take Quiz" << std::endl;
   std::cout << "2. Print Movie List" << std::endl;
   std::cout << "3. Programmers Top Picks" << std::endl;
   std::cout << "4. Log out" << std::endl;
   std::cout << "5. Exit System" << std::endl;
-  std::cin >> userInput;
+  getline(std::cin, userInput);
   return userInput;
 }
-
-bool checkInput(int userinput) //checks to make sure the user is typing in the proper input
-{
-  if(userinput <= 0 || userinput >= 6 || (userinput % 1 != 0))
-  {
-    return false;
-  }
-  else
-  {
-    return true;
-  }
-}
-
 
 bool loginMenu(linked_list<user>* userList)
 {
@@ -234,33 +221,31 @@ bool loginMenu(linked_list<user>* userList)
 	std::cout << "3. Exit System\n" << std::endl;
 	std::cout << "Choice: ";
 
-
-
-	int choice = 0;
-
-	std::cin >> choice;
-  if (std::cin.fail())
-  {
-    std::cin.clear();
-    std::cin.ignore(100,'\n');
-  }
-  if(!checkInput(choice))
-  {
-    std::cout << "Incorrect input please input a number 1 through 5" << std::endl;
-    continue;
-  }
-  else //correct input switch
-  {
-
+	string userInput = "";
+	
+	
+	
+	getline(std::cin, userInput);
+	
+	if(userInput.size()!= 1){ //If string is not only one character, print error.
+			
+			std::cout << "\nIncorrect input: Please input a number 1 through 3\n" << std::endl;
+			continue;
+			
+	}
+		
+	char choice = userInput[0]; //Gets character at index 0 
+	
 	switch(choice){
 
-		case 1:{
+		case '1':
+		{
 
 			string username = "";
 			string password = "";
 
 			std::cout << "\nUsername: ";
-			std::cin >> username;
+			getline(std::cin, username);
 
 			int userListSize = userList->size();
 
@@ -269,19 +254,22 @@ bool loginMenu(linked_list<user>* userList)
 					break;
 				}
 
+				
 			for(int i = 0; i != userListSize; i++){
 
 				user tempUser = userList->item_at(i);
 
 				string tempName = tempUser.getUsername();
 
+				
 				if(username != tempName){
 					std::cout << "Username does not exist.\n" << std::endl;
+					break;
 				}
-
+			
 
 				std::cout << "Password: ";
-				std::cin >> password;
+				getline(std::cin, password);
 
 				string tempPass = tempUser.getPassword();
 
@@ -293,21 +281,19 @@ bool loginMenu(linked_list<user>* userList)
 					break;
 
 				}
-
-
-
 			}
 
 			break;
 		}
 
-		case 2:{
+		case '2':
+		{
 			string username = "";
 			string password = "";
 
 			std::cout << "\nUsername: ";
-			std::cin >> username;
-
+			getline(std::cin, username);
+			
 			bool usernameMatch = false;
 			for(size_t i = 0; i != userList->size(); i++){
 				user current_user = userList->item_at(i);
@@ -322,7 +308,7 @@ bool loginMenu(linked_list<user>* userList)
 			}
 
 			std::cout << "Password: ";
-			std::cin >> password;
+			getline(std::cin, password);
 
 			user newUser(username,password);
 
@@ -333,15 +319,21 @@ bool loginMenu(linked_list<user>* userList)
 			break;
 		}
 
-		case 3:{
-      std::cout << "Thank you for using Movie Quiz" << std::endl;
+		case '3':
+		{
+			std::cout << "Thank you for using Movie Quiz" << std::endl;
 			exit(0);
-      break;
+			break;
 
+		}
+		
+		default:
+		{
+			std::cout << "\nIncorrect input: Please input a number 1 through 3\n" << std::endl;
+			break;
 		}
 
 	}
-}
-}
-	return false;
+  }
+  return false;
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   trait.h
  * Author: Claire
  *
@@ -16,6 +16,7 @@
 
 #include <string>
 #include <iostream>
+#include "movieList1.h"
 
 using namespace std;
 
@@ -39,7 +40,7 @@ private:
     double adventure;
     double history;
     bool does_a_dog_die;
-    
+
 public:
     Traits();
     double getTrait(string trait);
@@ -215,4 +216,3 @@ void Traits::resetTraits(){
 }
 
 #endif /* TRAIT_H */
-

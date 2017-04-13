@@ -3,6 +3,7 @@
 #include <cstring>
 #include <string>
 #include <stdexcept>
+#include "movieList1.h"
 using std::string;
 
 //Start of linked list- I will explain stuff if you need to, my TA taught us a diff way how to

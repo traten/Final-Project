@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   quiz.h
  * Author: Claire
  *
@@ -18,6 +18,7 @@
 #include <string>
 #include <iostream>
 #include "trait.h"
+#include "movieList1.h"
 
 Traits traitlist;
 
@@ -48,7 +49,7 @@ void question1(){
         traitMod = "thrillseeker";
         traitlist.modifyCompliments(traitMod, 5.0);
         return;
-    case 2: 
+    case 2:
         traitMod = "pansy";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -61,7 +62,7 @@ void question1(){
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
     }
-    
+
 }
 
 void question2() {
@@ -80,7 +81,7 @@ void question2() {
         traitMod = "pessimistic";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "carefree";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -103,7 +104,7 @@ void question3() {
     std::cout << "1) Attempt to fight them" << endl;
     std::cout << "2) Call the police" << endl;
     std::cout << "3) Hide" << endl;
-    std::cout << "4) Set up Home Alone-style pranks \n" << endl; 
+    std::cout << "4) Set up Home Alone-style pranks \n" << endl;
     cin >> choice;
     choiceCheck(choice);
     switch(choice){
@@ -111,7 +112,7 @@ void question3() {
         traitMod = "violent";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "practical";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -144,7 +145,7 @@ void question4() {
         traitMod = "pansy";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "violent";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -175,7 +176,7 @@ void question5() {
         traitMod = "religious";
         traitlist.setTrait(traitMod, 15.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "violent";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -206,7 +207,7 @@ void question6() {
         traitMod = "religious";
         traitlist.setTrait(traitMod, 15.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "playItSafe";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -237,7 +238,7 @@ void question7() {
         traitMod = "violent";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "apathetic";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -268,7 +269,7 @@ void question8() {
         traitMod = "apathetic";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "thrillseeker";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -299,7 +300,7 @@ void question9() {
         traitMod = "thrillseeker";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "empathetic";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -332,7 +333,7 @@ void question10() {
         traitMod = "thrillseeker";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "playItSafe";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -363,7 +364,7 @@ void question11() {
         traitMod = "history";
         traitlist.setTrait(traitMod, 15.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "practical";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -394,7 +395,7 @@ void question12() {
         traitMod = "history";
         traitlist.setTrait(traitMod, 15.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "practical";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -420,7 +421,7 @@ void question13() {
     std::cout << "2) Eat it. You're hungry now!" << endl;
     std::cout << "3) Attempt to throw it at a squirrel in the hopes that you will have dinner when the squirrel is knocked out" << endl;
     std::cout << "4) Talk to it and see if it will tell you its secrets \n" << endl;
-                    
+
     cin >> choice;
     choiceCheck(choice);
     switch(choice){
@@ -428,7 +429,7 @@ void question13() {
         traitMod = "practical";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "playItSafe";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -451,7 +452,7 @@ void question14() {
     std::cout << "2) Eat lots of food" << endl;
     std::cout << "3) Stay inside. You don't want to deal with people" << endl;
     std::cout << "4) Paint the view from your hotel room \n" << endl;
-                    
+
     cin >> choice;
     choiceCheck(choice);
     switch(choice){
@@ -459,7 +460,7 @@ void question14() {
         traitMod = "adventure";
         traitlist.setTrait(traitMod, 15.0);
         break;
-    case 2: 
+    case 2:
         traitMod = "carefree";
         traitlist.modifyCompliments(traitMod, 5.0);
         break;
@@ -488,8 +489,7 @@ void printQuiz(){
     question12();
     question13();
     question14();
-           
-    
+
+
 }
 #endif /* QUIZ_H */
-

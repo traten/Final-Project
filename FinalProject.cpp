@@ -84,7 +84,7 @@ int main()
 	movieList movieTwo("violent.txt");
 	movieList movieThree("carefree.txt");
 	
-	for (
+	int oneSize = movieOne.
 		
 	
 

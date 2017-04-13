@@ -138,7 +138,7 @@ while(true) //this is used for creating new user
 	    	string userInput = menu();
 		if(userInput.size()!= 1){ //If string is not only one character, print error.
 
-			cout << "Incorrect input please input a number 1 through 5" << endl;
+			cout << "\nIncorrect input please input a number 1 through 5" << endl;
 			continue;
 
 		}
@@ -175,7 +175,7 @@ while(true) //this is used for creating new user
 				  std::cout << "Thank you for using Movie Quiz" << std::endl;
 				  return 0;
 		      default: 	//If its not 1-5		
-				  std::cout << "Incorrect input: Please input a number 1 through 3" << std::endl;
+				  std::cout << "\nIncorrect input: Please input a number 1 through 3" << std::endl;
 				  break;
 
 	  	     }

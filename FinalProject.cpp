@@ -172,7 +172,7 @@ while(true) //this is used for creating new user
 				  std::cout << "Thank you for using Movie Quiz" << std::endl;
 				  return 0;
 		      default: 	//If its not 1-5
-				  std::cout << "\nIncorrect input: Please input a number 1 through 3" << std::endl;
+				  std::cout << "\nIncorrect input: Please input a number 1 through 5" << std::endl;
 				  break;
 
 	  	     }

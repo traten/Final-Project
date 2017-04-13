@@ -75,7 +75,7 @@ int main()
 
           int tempThreeSize = tempThree.size();
 
-          //Loop below gets rid of all whitespace 
+          //Loop below gets rid of all whitespace
           for(int z = 0; z != tempThreeSize; z++){
             char c = tempThree[z];
             if(isspace(c)){
@@ -115,11 +115,11 @@ int main()
 					tempOne.erase(z,1);
 					z = -1;
 					tempOneSize = tempOne.size();
-				}	
+				}
 			}
 
 			for (int j = 0; j < twoSize; j++)
-			{	
+			{
 				tempTwo = movieTwo.getMovie(j);
 
 				tempTemp = tempTwo;
@@ -186,11 +186,11 @@ int main()
 					tempOne.erase(z,1);
 					z = -1;
 					tempOneSize = tempOne.size();
-				}	
+				}
 			}
 
 			for (int j = 0; j < threeSize; j++)
-			{	
+			{
 				tempThree = movieThree.getMovie(j);
 
 				tempTemp = tempThree;
@@ -256,11 +256,11 @@ int main()
 					tempTwo.erase(z,1);
 					z = -1;
 					tempTwoSize = tempTwo.size();
-				}	
+				}
 			}
 
 			for (int j = 0; j < threeSize; j++)
-			{	
+			{
 				tempThree = movieThree.getMovie(j);
 
 				tempTemp = tempThree;
@@ -328,7 +328,7 @@ int main()
 					tempOne.erase(z,1);
 					z = -1;
 					tempOneSize = tempOne.size();
-				}	
+				}
 			}
 
 			//checking if movies contains the current movie
@@ -381,7 +381,7 @@ int main()
 					tempTwo.erase(z,1);
 					z = -1;
 					tempTwoSize = tempTwo.size();
-				}	
+				}
 			}
 
 			//checking if movies contains the current movie
@@ -434,7 +434,7 @@ int main()
 					tempThree.erase(z,1);
 					z = -1;
 					tempThreeSize = tempThree.size();
-				}	
+				}
 			}
 
 			//checking if movies contains the current movie
@@ -473,15 +473,15 @@ int main()
 
 	string username = "username";
 	string filename = username + ".txt";
-	
+
 	ofstream out(filename);
-	
+
 	out << username << "'s Personalized Top 10 Movie List\n\n";
-	
+
 	for (int i = 0; i < 10; i++){
 		 out << i+1 << ": " << movies[i] << "\n";
 	}
-	
+
 	out.close();
 
 
@@ -510,6 +510,7 @@ while(true) //this is used for creating new user
 	   	{
 		      case '1': //quiz section
 				  std::cout << "Movie Quiz" << std::endl;
+          printQuiz();
 				  break;
 		      case '2': //Prints quiz
 				  std::cout << "Printing Quiz results" << std::endl;

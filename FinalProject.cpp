@@ -63,9 +63,9 @@ while(true) //this is used for creating new user
           std::cout << getSecondString() << std::endl;
           std::cout << getLastString() << std::endl;
 
-          movieList movieOne(getTopString() + ".txt");
-        	movieList movieTwo(getSecondString() + ".txt");
-        	movieList movieThree(getLastString() + ".txt");
+          movieList movieOne("./MovieFiles/" + getTopString() + ".txt");
+        	movieList movieTwo("./MovieFiles/" + getSecondString() + ".txt");
+        	movieList movieThree("./MovieFiles/" + getLastString() + ".txt");
 
         	int oneSize = movieOne.getCapacity();
         	int twoSize = movieTwo.getCapacity();
@@ -523,7 +523,7 @@ while(true) //this is used for creating new user
         		}
         	}
 
-          string filename = "./../UserFiles/" + current_username + ".txt";
+          string filename = "./UserFiles/" + current_username + ".txt";
 
           ofstream out(filename);
 
@@ -538,12 +538,20 @@ while(true) //this is used for creating new user
 
 				  break;}
 		      case '2': //Prints quiz
-          std::cout << "Printing Quiz results" << std::endl;
-          std::cout << "Check your folder for your Movie List" << std::endl;
-          for (int i = 0; i < 10; i++)
+          if(movies[0] == " ")
           {
-            std::cout << movies[i] << std::endl;
+            std::cout << "No results! Haven't taken quiz yet!" << std::endl;
           }
+          else
+          {
+            std::cout << "Printing Quiz results" << std::endl;
+            std::cout << "Check your folder for your Movie List" << std::endl;
+            for (int i = 0; i < 10; i++)
+            {
+              std::cout << movies[i] << std::endl;
+            }
+          }
+
 
 
 				  break;

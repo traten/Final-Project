@@ -13,7 +13,7 @@ int main()
   //Creates linked list to hold user objects
   linked_list<user>* userList = new linked_list<user>;
 
-  string * movies = new string[10];
+  //string * movies = new string[10];
 
 	// string username = "username";
 	// string filename = username + ".txt";
@@ -523,7 +523,7 @@ while(true) //this is used for creating new user
         		}
         	}
 
-          string filename = current_username + ".txt";
+          string filename = "./../UserFiles/" + current_username + ".txt";
 
           ofstream out(filename);
 

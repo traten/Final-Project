@@ -7,6 +7,7 @@
 using std::string;
 
 string current_username = "";
+string *movies = new string[10];
 
 typedef std::size_t size_t;
 
@@ -263,9 +264,9 @@ bool loginMenu(linked_list<user>* userList)
 					usernameExists = true;
 					break;
 				}
-			
+
 			}
-			
+
 			if(!usernameExists){
 				std::cout << "Username does not exist.\n" << std::endl;
 				break;
@@ -279,6 +280,11 @@ bool loginMenu(linked_list<user>* userList)
 
 			if(password == tempPass){
 				current_username = username;
+        for(size_t i = 10;  i < 10; i++)
+        {
+          std::cout << "here" << std::endl;
+          movies[i] = " ";
+        }
 				return true;
 			}
 			else{
@@ -286,7 +292,7 @@ bool loginMenu(linked_list<user>* userList)
 				break;
 
 			}
-			
+
 			break;
 		}
 

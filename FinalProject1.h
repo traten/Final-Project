@@ -8,8 +8,6 @@ using std::string;
 
 string current_username = "";
 
-//Start of linked list- I will explain stuff if you need to, my TA taught us a diff way how to
-//do linked lists - Tyler
 typedef std::size_t size_t;
 
 template <typename T>
@@ -179,8 +177,6 @@ class user{
 
 		std::string password;
 
-		//quiz quizResults;
-
 
 	public:
 
@@ -225,8 +221,6 @@ bool loginMenu(linked_list<user>* userList)
 
 	string userInput = "";
 
-
-
 	getline(std::cin, userInput);
 
 	if(userInput.size()!= 1){ //If string is not only one character, print error.
@@ -256,36 +250,43 @@ bool loginMenu(linked_list<user>* userList)
 					break;
 				}
 
-
+			bool usernameExists = false;
+			user tempUser("","");
 			for(int i = 0; i != userListSize; i++){
 
-				user tempUser = userList->item_at(i);
+				tempUser = userList->item_at(i);
 
 				string tempName = tempUser.getUsername();
 
 
-				if(username != tempName){
-					std::cout << "Username does not exist.\n" << std::endl;
+				if(username == tempName){
+					usernameExists = true;
 					break;
 				}
-
-
-				std::cout << "Password: ";
-				getline(std::cin, password);
-
-				string tempPass = tempUser.getPassword();
-
-				if(password == tempPass){
-          current_username = username;
-					return true;
-				}
-				else{
-					std::cout << "Wrong password!\n" << std::endl;
-					break;
-
-				}
+			
+			}
+			
+			if(!usernameExists){
+				std::cout << "Username does not exist.\n" << std::endl;
+				break;
 			}
 
+
+			std::cout << "Password: ";
+			getline(std::cin, password);
+
+			string tempPass = tempUser.getPassword();
+
+			if(password == tempPass){
+				current_username = username;
+				return true;
+			}
+			else{
+				std::cout << "Wrong password!\n" << std::endl;
+				break;
+
+			}
+			
 			break;
 		}
 

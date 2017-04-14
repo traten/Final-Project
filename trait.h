@@ -279,9 +279,7 @@ string Traits::max3Trait(string max1, string max2){
     vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",
                                 "playitsafe", "empathetic", "apathetic", "optimistic", "pessimistic", "predictable", "unpredictable", "adventure", "history" };
     for(size_t i = 0; i < traitVect.size();i++){
-        if(traitVect[i] == max1)
-        traitVect.erase(traitVect.begin() + i);
-        if(traitVect[i] == max2)
+        if(traitVect[i] == max1 || traitVect[i] == max2)
         traitVect.erase(traitVect.begin() + i);
     }
     vector<int> valuesVect;

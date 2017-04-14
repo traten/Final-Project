@@ -6,6 +6,8 @@
 #include "movieList1.h"
 using std::string;
 
+string current_username = "";
+
 //Start of linked list- I will explain stuff if you need to, my TA taught us a diff way how to
 //do linked lists - Tyler
 typedef std::size_t size_t;
@@ -274,6 +276,7 @@ bool loginMenu(linked_list<user>* userList)
 				string tempPass = tempUser.getPassword();
 
 				if(password == tempPass){
+          current_username = username;
 					return true;
 				}
 				else{

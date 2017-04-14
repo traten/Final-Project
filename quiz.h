@@ -6,7 +6,7 @@
 
 /*
  * File:   quiz.h
- * Author: Claire and a little bit of nico
+ * Author: Claire
  *
  * Created on March 31, 2017, 4:03 PM
  */
@@ -737,5 +737,46 @@ void printQuiz(){
     question13();
     question14();
 
+    std::cout<<traitlist.getTrait("violent")<<std::endl;
+    std::cout<<traitlist.getTrait("pansy")<<std::endl;
+    std::cout<<traitlist.getTrait("carefree")<<std::endl;
+    std::cout<<traitlist.getTrait("serious")<<std::endl;
+    std::cout<<traitlist.getTrait("imaginative")<<std::endl;
+    std::cout<<traitlist.getTrait("practical")<<std::endl;
+    std::cout<<traitlist.getTrait("religious")<<std::endl;
+    std::cout<<traitlist.getTrait("thrillseeker")<<std::endl;
+    std::cout<<traitlist.getTrait("playItSafe")<<std::endl;
+    std::cout<<traitlist.getTrait("empathetic")<<std::endl;
+    std::cout<<traitlist.getTrait("apathetic")<<std::endl;
+    std::cout<<traitlist.getTrait("optimistic")<<std::endl;
+    std::cout<<traitlist.getTrait("pessimistic")<<std::endl;
+    std::cout<<traitlist.getTrait("predictable")<<std::endl;
+    std::cout<<traitlist.getTrait("unpredictable")<<std::endl;
+    std::cout<<traitlist.getTrait("adventure")<<std::endl;
+    std::cout<<traitlist.getTrait("history")<<std::endl;
+
+
+
+
+
+
+
 }
+
+std::string getTopString()
+{
+  return traitlist.max1Trait();
+}
+std::string getSecondString()
+{
+  return traitlist.max2Trait(traitlist.max1Trait());
+}
+
+std::string getLastString()
+{
+  return traitlist.max3Trait(traitlist.max1Trait(),traitlist.max2Trait(traitlist.max1Trait()));
+}
+// std::cout << traitlist.max1Trait() << std::endl;
+// std::cout << traitlist.max2Trait(traitlist.max1Trait()) << std::endl;
+// std::cout << traitlist.max3Trait(traitlist.max1Trait(),traitlist.max2Trait(traitlist.max1Trait())) << std::endl;
 #endif /* QUIZ_H */

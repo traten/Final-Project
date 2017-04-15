@@ -1,10 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * File:   trait.h
  * Author: Claire
  *
@@ -50,6 +44,7 @@ public:
     string max3Trait(string max, string max2);
 };
 
+//constructor for Traits object, intitializes all traits to 50
 Traits::Traits(){
     this->violent = 50;
     this->pansy = 50;
@@ -70,6 +65,7 @@ Traits::Traits(){
     this-> history = 50;
 }
 
+//accessor method to return a given trait
 int Traits::getTrait(string trait){
     if (trait == "violent"){
         return this->violent;
@@ -126,6 +122,7 @@ int Traits::getTrait(string trait){
     return 0;
 }
 
+//mutator method that takes in a trait and modifies both it and its compliment by a given amount (adds to trait1, subtracts from compliment)
 void Traits::modifyCompliments(string trait1, int modAmount){
 
     if (trait1 =="violent"){
@@ -186,6 +183,7 @@ void Traits::modifyCompliments(string trait1, int modAmount){
     }
 }
 
+//mutator method that modifies a single trait by a given amount, used only for traits that do not have compliments
 void Traits::setTrait(string trait, int modAmount){
     if(trait==("adventure")){
         this->adventure += modAmount;
@@ -198,6 +196,7 @@ void Traits::setTrait(string trait, int modAmount){
     }
 }
 
+//resets all traits to their default values upon log out
 void Traits::resetTraits(){
     this-> violent = 50;
     this-> pansy = 50;
@@ -218,6 +217,7 @@ void Traits::resetTraits(){
     this-> history = 50;
 }
 
+//returns all the traits and their values, using accessor method getTrait
 void Traits::returnAll(){
     cout << "Violent: " << getTrait("violent") <<endl;
     cout << "Pansy: " << getTrait("pansy") <<endl;
@@ -239,6 +239,7 @@ void Traits::returnAll(){
 
 }
 
+//identifies the highest value trait of the user and returns it from the string vector containing the trait names
 string Traits::max1Trait(){
     int indexMax = 0;
     vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",
@@ -256,6 +257,7 @@ string Traits::max1Trait(){
 
 }
 
+//identifies and returns the second highest value trait of the user by taking in the result from max1Trait as an argument
 string Traits::max2Trait(string max){
     int indexMax2 = 0;
     vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",
@@ -274,6 +276,8 @@ string Traits::max2Trait(string max){
     }
     return traitVect[indexMax2];
 }
+
+//identifies and returns the third highest value trait of the user by taking in the results from max1Trait and max2Trait as arguments
 string Traits::max3Trait(string max1, string max2){
     int indexMax3 = 0;
     vector<string> traitVect= {"violent", "pansy", "serious", "carefree", "imaginative", "practical", "religious", "thrillseeker",

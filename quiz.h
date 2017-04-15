@@ -1,10 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * File:   quiz.h
  * Author: Claire
  *
@@ -14,22 +8,13 @@
 #ifndef QUIZ_H
 #define QUIZ_H
 
-//#define endl "\n"
 #include <cstdlib>
 #include <string>
 #include <iostream>
 #include "trait.h"
 
-Traits traitlist;
+Traits traitlist; //initializes an instance of a Traits object called traitlist
 
-// int choiceCheck(int choice){
-//     if (choice <=4 && choice > 0) {
-//         return choice;
-//     }
-//     else {
-//         throw string("Choice is not valid");
-//     }
-// }
 void question1(){
   bool pass = true;
   while(pass)
@@ -42,7 +27,6 @@ void question1(){
     std::cout << "2) Mouse" << endl;
     std::cout << "3) Unicorn" << endl;
     std::cout << "4) Owl \n" << endl;
-    //choiceCheck(choice);
     getline(std::cin, choice);
 
   	if(choice.size()!= 1){ //If string is not only one character, print error.
@@ -75,7 +59,8 @@ void question1(){
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -125,7 +110,8 @@ void question2() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -175,7 +161,8 @@ void question3() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
 
@@ -224,6 +211,7 @@ void question4() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
+    //if the user does not input a number 1-4
     default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
@@ -273,7 +261,8 @@ void question5() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
 
@@ -322,7 +311,8 @@ void question6() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -370,6 +360,7 @@ void question7() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
+      //if the user does not input a number 1-4
       default:
           std::cout << "Please enter a number 1-4" << std::endl;
           break;
@@ -419,7 +410,8 @@ void question8() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -469,7 +461,8 @@ void question9() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -517,6 +510,7 @@ void question10() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
+    //if the user does not input a number 1-4
     default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
@@ -565,7 +559,8 @@ void question11() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+   //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -615,7 +610,8 @@ void question12() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
 
@@ -665,7 +661,8 @@ void question13() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
-    default:
+    //if the user does not input a number 1-4
+      default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
     }
@@ -714,6 +711,7 @@ void question14() {
         traitlist.modifyCompliments(traitMod, 5);
         pass = false;
         break;
+    //if the user does not input a number 1-4
     default:
         std::cout << "Please enter a number 1-4" << std::endl;
         break;
@@ -737,6 +735,7 @@ void printQuiz(){
     question13();
     question14();
 
+  //return values of all the traits for checking purposes
     std::cout<<traitlist.getTrait("violent")<<std::endl;
     std::cout<<traitlist.getTrait("pansy")<<std::endl;
     std::cout<<traitlist.getTrait("carefree")<<std::endl;
@@ -755,14 +754,9 @@ void printQuiz(){
     std::cout<<traitlist.getTrait("adventure")<<std::endl;
     std::cout<<traitlist.getTrait("history")<<std::endl;
 
-
-
-
-
-
-
 }
 
+//getTopString(), getSecondString(), getLastString() return the User's top three traits for matching with movie traits
 std::string getTopString()
 {
   return traitlist.max1Trait();

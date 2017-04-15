@@ -13,9 +13,9 @@ class movieList
 		int capacity;
 
 	public:
-		movieList(string fileName);
-		string getMovie(int index);
-		int getCapacity();
+		movieList(string fileName); //constructor
+		string getMovie(int index); //returns the movie at the specified index
+		int getCapacity(); //returns capacity of list
 };
 
 movieList::movieList(std::string fileName)
@@ -25,7 +25,7 @@ movieList::movieList(std::string fileName)
 	string temp;
 	int size = 0;
 
-	while (std::getline(sizeCalc, temp))
+	while (std::getline(sizeCalc, temp)) //loop to get the number of movies in file
 	{
 		size++;
 	}
@@ -34,7 +34,7 @@ movieList::movieList(std::string fileName)
 
 	sizeCalc.close();
 
-	this->movies = new string[size];
+	this->movies = new string[size]; //create a static array that holds the correct number of movies
 
 	std::ifstream movieFile(fileName, fstream::in); //Create file
 

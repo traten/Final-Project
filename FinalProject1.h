@@ -282,7 +282,6 @@ bool loginMenu(linked_list<user>* userList)
 				current_username = username;
         for(size_t i = 0;  i < 10; i++)
         {
-          std::cout << "here" << std::endl;
           movies[i] = " ";
         }
 				return true;

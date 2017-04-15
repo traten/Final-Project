@@ -1,7 +1,7 @@
 #include "FinalProject1.h"
 #include "quiz.h"
 #include "trait.h"
-#include "movieList1.h"
+#include "movieList.h"
 #include <iostream>
 #include <cstring>
 #include <string>

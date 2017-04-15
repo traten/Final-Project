@@ -75,24 +75,26 @@ while(true) //this is used for creating new user
 	  	Secondly, if 10 movies have not already been found, the logic compares traits 1 and 2, then 1 and 3,and 
 	  	finally 2 and 3 to find the the common movies between two lists, going from most important to least
 		
-	  	Thirdly, if 10 movies have still not been found, we return movies from an idivdual list until we hit 10 
+	  	Thirdly, if 10 movies have still not been found, we get movies from an idividual list until we hit 10 
 	  ****/
-		  
+		
+		/*--- Get size of each list ---*/
         	int oneSize = movieOne.getCapacity();
         	int twoSize = movieTwo.getCapacity();
         	int threeSize = movieThree.getCapacity();
-
+		
+		/*--- Create string for logic ---*/
         	std::string tempOne;
         	std::string tempTwo;
         	std::string tempThree;
-
           	std::string tempTemp;
 
           	bool containsMovie = false;
 
-        	//string * movies = new string[10];
         	int moviesLocation = 0;
 
+		/*--- Start triple nested loop ---*/
+		  
         	for (int i = 0; i < oneSize; i++)
         	{
         		tempOne = movieOne.getMovie(i);
@@ -160,6 +162,10 @@ while(true) //this is used for creating new user
         		}
         	}
 
+		/*--- End triple nested loop ---*/
+		
+		/*--- If we dont have 10 movies, start next loops ---*/
+		
         	if (moviesLocation < 10)
         	{
         		for (int i = 0; i < oneSize; i++)
@@ -230,6 +236,10 @@ while(true) //this is used for creating new user
                 	}
               	}
         	}
+		  
+		/*--- End loops ---*/
+		  
+		/*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -301,6 +311,10 @@ while(true) //this is used for creating new user
                 	}
               	}
         	}
+		  
+		/*--- End loops ---*/
+		  
+		/*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -371,6 +385,9 @@ while(true) //this is used for creating new user
                 	}
               	}
         	}
+		/*--- End Loops ---*/
+		  
+		/*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -424,6 +441,10 @@ while(true) //this is used for creating new user
         				containsMovie = false;
         		}
         	}
+		  
+		/*--- End loops ---*/
+		  
+		/*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -477,6 +498,10 @@ while(true) //this is used for creating new user
         				containsMovie = false;
         		}
         	}
+		  
+		/*--- End loops ---*/
+		  
+		/*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -533,6 +558,8 @@ while(true) //this is used for creating new user
         				containsMovie = false;
         		}
         	}
+		  
+		/*--- End loops ---*/
 
           string filename = "./UserFiles/" + current_username + ".txt";
 

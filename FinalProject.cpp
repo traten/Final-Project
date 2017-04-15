@@ -63,10 +63,21 @@ while(true) //this is used for creating new user
           std::cout << getSecondString() << std::endl;
           std::cout << getLastString() << std::endl;
 
-          movieList movieOne("./MovieFiles/" + getTopString() + ".txt");
-        	movieList movieTwo("./MovieFiles/" + getSecondString() + ".txt");
-        	movieList movieThree("./MovieFiles/" + getLastString() + ".txt");
-
+          movieList movieOne("./MovieFiles/" + getTopString() + ".txt"); //Create movie list object for the top rated trate
+        	movieList movieTwo("./MovieFiles/" + getSecondString() + ".txt"); //Create movie list object for the second rated trate
+        	movieList movieThree("./MovieFiles/" + getLastString() + ".txt"); //Create movie list object for the third rated trate
+	  
+		  
+	  /*--- The logic below sets the user's top 10 movies into the movie array ---*/
+		  
+	  /***  Firstly, a triple nested loop is used to determine which movies are in all three lists
+	  
+	  	Secondly, if 10 movies have not already been found, the logic compares traits 1 and 2, then 1 and 3,and 
+	  	finally 2 and 3 to find the the common movies between two lists, going from most important to least
+		
+	  	Thirdly, if 10 movies have still not been found, we return movies from an idivdual list until we hit 10 
+	  ****/
+		  
         	int oneSize = movieOne.getCapacity();
         	int twoSize = movieTwo.getCapacity();
         	int threeSize = movieThree.getCapacity();

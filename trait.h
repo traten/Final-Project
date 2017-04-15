@@ -13,6 +13,7 @@
 
 using namespace std;
 
+//defines a class Traits, which contains the following int trait fields
 class Traits{
 private:
     int violent;

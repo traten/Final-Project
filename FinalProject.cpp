@@ -1,4 +1,3 @@
-
 #include "FinalProject1.h"
 #include "quiz.h"
 #include "trait.h"
@@ -33,7 +32,7 @@ int main()
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
-	cout << "\nWelcome to Movie Quiz!\n" << endl;
+  cout << "\nWelcome to Movie Quiz!\n" << endl;
 	bool logIn = loginMenu(userList);
 
 	cout << "\n~~~~MOVIE QUIZ~~~~" << endl;
@@ -47,10 +46,7 @@ while(true) //this is used for creating new user
 
 		}
 
-
-
 		char choice = userInput.at(0); //Gets character at index 0
-
 
 		switch(choice)
 	   	{
@@ -68,32 +64,32 @@ while(true) //this is used for creating new user
         	movieList movieThree("./MovieFiles/" + getLastString() + ".txt"); //Create movie list object for the third rated trate
 	  
 		  
-	  /*--- The logic below sets the user's top 10 movies into the movie array ---*/
+	       /*--- The logic below sets the user's top 10 movies into the movie array ---*/
 		  
-	  /***  Firstly, a triple nested loop is used to determine which movies are in all three lists
+	       /* 
+          Firstly, a triple nested loop is used to determine which movies are in all three lists
 	  
-	  	Secondly, if 10 movies have not already been found, the logic compares traits 1 and 2, then 1 and 3,and 
-	  	finally 2 and 3 to find the the common movies between two lists, going from most important to least
+	  	    Secondly, if 10 movies have not already been found, the logic compares traits 1 and 2, then 1 and 3,and 
+	  	    finally 2 and 3 to find the the common movies between two lists, going from most important to least
 		
-	  	Thirdly, if 10 movies have still not been found, we get movies from an idividual list until we hit 10 
-	  ****/
+	  	    Thirdly, if 10 movies have still not been found, we get movies from an idividual list until we hit 10 */
 		
-		/*--- Get size of each list ---*/
+		      /*--- Get size of each list ---*/
         	int oneSize = movieOne.getCapacity();
         	int twoSize = movieTwo.getCapacity();
         	int threeSize = movieThree.getCapacity();
 		
-		/*--- Create string for logic ---*/
+		      /*--- Create string for logic ---*/
         	std::string tempOne;
         	std::string tempTwo;
         	std::string tempThree;
-          	std::string tempTemp;
+          std::string tempTemp;
 
-          	bool containsMovie = false;
+          bool containsMovie = false;
 
         	int moviesLocation = 0;
 
-		/*--- Start triple nested loop ---*/
+		      /*--- Start triple nested loop ---*/
 		  
         	for (int i = 0; i < oneSize; i++)
         	{
@@ -162,9 +158,9 @@ while(true) //this is used for creating new user
         		}
         	}
 
-		/*--- End triple nested loop ---*/
+		    /*--- End triple nested loop ---*/
 		
-		/*--- If we dont have 10 movies, start next loops ---*/
+		    /*--- If we dont have 10 movies, start next loops ---*/
 		
         	if (moviesLocation < 10)
         	{
@@ -229,7 +225,7 @@ while(true) //this is used for creating new user
                 		if ( (tempOne == tempTwo) && (moviesLocation < 10) && (!containsMovie))
                 		{
                 			movies[moviesLocation] = tempTemp;
-        					moviesLocation++;
+        					    moviesLocation++;
                 		}
 
                 		containsMovie = false;
@@ -237,9 +233,9 @@ while(true) //this is used for creating new user
               	}
         	}
 		  
-		/*--- End loops ---*/
+		      /*--- End loops ---*/
 		  
-		/*--- If we dont have 10 movies, start next loops ---*/
+		      /*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -304,7 +300,7 @@ while(true) //this is used for creating new user
                 		if ( (tempOne == tempThree) && (moviesLocation < 10) && (!containsMovie))
                 		{
                 			movies[moviesLocation] = tempTemp;
-        					moviesLocation++;
+        					    moviesLocation++;
                 		}
 
                 		containsMovie = false;
@@ -312,9 +308,9 @@ while(true) //this is used for creating new user
               	}
         	}
 		  
-		/*--- End loops ---*/
+		      /*--- End loops ---*/
 		  
-		/*--- If we dont have 10 movies, start next loops ---*/
+		      /*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -378,16 +374,17 @@ while(true) //this is used for creating new user
                 		if ( (tempTwo == tempThree) && (moviesLocation < 10) && (!containsMovie))
                 		{
                 			movies[moviesLocation] = tempTemp;
-        					moviesLocation++;
+        					    moviesLocation++;
                 		}
 
                 		containsMovie = false;
                 	}
               	}
         	}
-		/*--- End Loops ---*/
+
+		      /*--- End Loops ---*/
 		  
-		/*--- If we dont have 10 movies, start next loops ---*/
+		      /*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -409,7 +406,7 @@ while(true) //this is used for creating new user
         				}
         			}
 
-        			//checking if movies contains the current movie
+        			    //checking if movies contains the current movie
                 	for (int y = 0; y < 10; y ++)
                 	{
                 		string checkTemp = movies[y];
@@ -442,9 +439,9 @@ while(true) //this is used for creating new user
         		}
         	}
 		  
-		/*--- End loops ---*/
+		      /*--- End loops ---*/
 		  
-		/*--- If we dont have 10 movies, start next loops ---*/
+		      /*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -466,7 +463,7 @@ while(true) //this is used for creating new user
         				}
         			}
 
-        			//checking if movies contains the current movie
+        			    //checking if movies contains the current movie
                 	for (int y = 0; y < 10; y ++)
                 	{
                 		string checkTemp = movies[y];
@@ -499,9 +496,9 @@ while(true) //this is used for creating new user
         		}
         	}
 		  
-		/*--- End loops ---*/
+		      /*--- End loops ---*/
 		  
-		/*--- If we dont have 10 movies, start next loops ---*/
+		      /*--- If we dont have 10 movies, start next loops ---*/
 
         	if (moviesLocation < 10)
         	{
@@ -515,10 +512,7 @@ while(true) //this is used for creating new user
 
         			//Loop below gets rid of all whitespace
         			for(int z = 0; z != tempThreeSize; z++){
-        				char c = tempThree[z];// for (int i = 0; i < 10; i++)
-          // {
-          //   std::cout << movies[i] << std::endl;
-          // }
+        				char c = tempThree[z];
         				if(isspace(c)){
         					tempThree.erase(z,1);
         					z = -1;
@@ -526,7 +520,7 @@ while(true) //this is used for creating new user
         				}
         			}
 
-        			//checking if movies contains the current movie
+        			    //checking if movies contains the current movie
                 	for (int y = 0; y < 10; y ++)
                 	{
                 		string checkTemp = movies[y];
@@ -559,7 +553,7 @@ while(true) //this is used for creating new user
         		}
         	}
 		  
-		/*--- End loops ---*/
+		      /*--- End loops ---*/
 
           string filename = "./UserFiles/" + current_username + ".txt";
 

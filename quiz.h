@@ -281,7 +281,7 @@ void question6() {
     std::cout << "1) Go to church" << endl;
     std::cout << "2) Stay inside and sleep. The outside world is scary." << endl;
     std::cout << "3) Go for a hike" << endl;
-    std::cout << "4)Do a puzzle \n" << endl;
+    std::cout << "4) Do a puzzle \n" << endl;
     getline(std::cin, choice);
     if(choice.size()!= 1){ //If string is not only one character, print error.
 

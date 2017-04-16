@@ -200,13 +200,12 @@ public:
 
 string menu()
 {
-//this is the menu after login
   string userInput = "";
-  std::cout<< "\n1. Take Quiz" << std::endl; //allows user to take quiz
-  std::cout << "2. Print Movie List" << std::endl; //prints the movie list
-  std::cout << "3. Programmers Top Picks" << std::endl; //Prints out programmer's top movies
-  std::cout << "4. Log out" << std::endl; //Logs out of system
-  std::cout << "5. Exit System" << std::endl; //shuts program down
+  std::cout<< "\n1. Take Quiz" << std::endl;
+  std::cout << "2. Print Movie List" << std::endl;
+  std::cout << "3. Programmers Top Picks" << std::endl;
+  std::cout << "4. Log out" << std::endl;
+  std::cout << "5. Exit System" << std::endl;
   getline(std::cin, userInput);
   return userInput;
 }
@@ -239,7 +238,7 @@ bool loginMenu(linked_list<user>* userList)
 
 		case '1':
 		{
-
+			//Choice 1: Log in using username and password
 			string username = "";
 			string password = "";
 
@@ -247,48 +246,56 @@ bool loginMenu(linked_list<user>* userList)
 			getline(std::cin, username);
 
 			int userListSize = userList->size();
-
-			if(userListSize == 0){
+			
+			
+			if(userListSize == 0){ //If there are no stored users, (list is empty)
 					std::cout << "Username does not exist.\n" << std::endl;
 					break;
 				}
 
+			//Following code checks if the Username exists. Checks linked list
+			//for user within given username.
 			bool usernameExists = false;
 			user tempUser("","");
 			for(int i = 0; i != userListSize; i++){
-
+				
 				tempUser = userList->item_at(i);
 
 				string tempName = tempUser.getUsername();
 
 
-				if(username == tempName){
+				if(username == tempName){ //Username exists
 					usernameExists = true;
 					break;
 				}
 
 			}
 
-			if(!usernameExists){
+			if(!usernameExists){ //Username doesn't exist
 				std::cout << "Username does not exist.\n" << std::endl;
 				break;
 			}
 
-
+			//Gets password input
 			std::cout << "Password: ";
 			getline(std::cin, password);
-
+			
+			//Gets stored password in User object with given username.
 			string tempPass = tempUser.getPassword();
 
-			if(password == tempPass){
+			//Compares inputed password with stored password
+			if(password == tempPass){ //Paswords match.
 				current_username = username;
-        for(size_t i = 0;  i < 10; i++)
-        {
-          movies[i] = " ";
-        }
-				return true;
-			}
-			else{
+				
+				for(size_t i = 0;  i < 10; i++)
+				{
+				  //Resets local movie list.
+				  movies[i] = " ";
+				}
+					return true; //Returns true, stops loop in main.
+				}
+			
+			else{ //Passwords do not match.
 				std::cout << "Wrong password!\n" << std::endl;
 				break;
 
@@ -297,7 +304,7 @@ bool loginMenu(linked_list<user>* userList)
 			break;
 		}
 
-		case '2':
+		case '2': //Creates new user.
 		{
 			string username = "";
 			string password = "";
@@ -305,23 +312,25 @@ bool loginMenu(linked_list<user>* userList)
 			std::cout << "\nUsername: ";
 			getline(std::cin, username);
 
+			//Following code checks if attempted new user matches any previous user.
+			//New usernames must be unique.
 			bool usernameMatch = false;
 			for(size_t i = 0; i != userList->size(); i++){
 				user current_user = userList->item_at(i);
 				string current_string = current_user.getUsername();
-				if(current_string == username){
+				if(current_string == username){ //If usernames match.
 					std::cout << "Username already taken. Try again." << std::endl;
 					usernameMatch = true;
 				}
 			}
-			if(usernameMatch == true){
+			if(usernameMatch == true){ //If they match, Log in menu loop.
 				break;
 			}
 
-			std::cout << "Password: ";
+			std::cout << "Password: "; //Gets password.
 			getline(std::cin, password);
 
-			user newUser(username,password);
+			user newUser(username,password); //Stores username and password in user object.
 
 			userList->insert(newUser, 0);
 
@@ -330,7 +339,7 @@ bool loginMenu(linked_list<user>* userList)
 			break;
 		}
 
-		case '3':
+		case '3': //Exits
 		{
 			std::cout << "Thank you for using Movie Quiz" << std::endl;
 			exit(0);
@@ -338,7 +347,7 @@ bool loginMenu(linked_list<user>* userList)
 
 		}
 
-		default:
+		default: //Default if not 1, 2, or 3, AKA incorrect input.
 		{
 			std::cout << "\nIncorrect input: Please input a number 1 through 3\n" << std::endl;
 			break;
@@ -346,5 +355,5 @@ bool loginMenu(linked_list<user>* userList)
 
 	}
   }
-  return false;
+  return false; //return false if Login wasn't successful.
 }

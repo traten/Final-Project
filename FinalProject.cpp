@@ -12,23 +12,6 @@ int main()
   //Creates linked list to hold user objects
   linked_list<user>* userList = new linked_list<user>;
 
-  //string * movies = new string[10];
-
-	// string username = "username";
-	// string filename = username + ".txt";
-  //
-	// ofstream out(filename);
-  //
-	// out << username << "'s Personalized Top 10 Movie List\n\n";
-  //
-	// for (int i = 0; i < 10; i++){
-	// 	 out << i+1 << ": " << movies[i] << "\n";
-	// }
-  //
-	// out.close();
-
-
-
   //This will be the menu used inside the first for loop
 while(true) //this is used for creating new user
 {
@@ -576,12 +559,15 @@ while(true) //this is used for creating new user
           }
           else
           {
-            std::cout << "Printing Quiz results" << std::endl;
-            std::cout << "Check your folder for your Movie List" << std::endl;
+		std::cout << "\nPrinting Quiz results" << std::endl;
+            	std::cout << "Additionally, check UserFiles for a .txt of your Movies" << std::endl;
+		std::cout << std::endl;
+		std::cout << "Your Movies:" << std::endl;
             for (int i = 0; i < 10; i++)
-            {
-              std::cout << movies[i] << std::endl;
-            }
+            {	  
+              std::cout << i + 1 << ": " << movies[i] << std::endl;
+            
+		}
           }
 
 

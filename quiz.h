@@ -735,25 +735,6 @@ void printQuiz(){
     question13();
     question14();
 
-  //return values of all the traits for checking purposes
-    std::cout<<traitlist.getTrait("violent")<<std::endl;
-    std::cout<<traitlist.getTrait("pansy")<<std::endl;
-    std::cout<<traitlist.getTrait("carefree")<<std::endl;
-    std::cout<<traitlist.getTrait("serious")<<std::endl;
-    std::cout<<traitlist.getTrait("imaginative")<<std::endl;
-    std::cout<<traitlist.getTrait("practical")<<std::endl;
-    std::cout<<traitlist.getTrait("religious")<<std::endl;
-    std::cout<<traitlist.getTrait("thrillseeker")<<std::endl;
-    std::cout<<traitlist.getTrait("playItSafe")<<std::endl;
-    std::cout<<traitlist.getTrait("empathetic")<<std::endl;
-    std::cout<<traitlist.getTrait("apathetic")<<std::endl;
-    std::cout<<traitlist.getTrait("optimistic")<<std::endl;
-    std::cout<<traitlist.getTrait("pessimistic")<<std::endl;
-    std::cout<<traitlist.getTrait("predictable")<<std::endl;
-    std::cout<<traitlist.getTrait("unpredictable")<<std::endl;
-    std::cout<<traitlist.getTrait("adventure")<<std::endl;
-    std::cout<<traitlist.getTrait("history")<<std::endl;
-
 }
 
 //getTopString(), getSecondString(), getLastString() return the User's top three traits for matching with movie traits

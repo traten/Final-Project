@@ -734,6 +734,7 @@ void printQuiz(){
     question12();
     question13();
     question14();
+    std::cout << "Press 2 to return movie list results" << std::endl;
 
 }
 

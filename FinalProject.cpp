@@ -38,9 +38,9 @@ while(true) //this is used for creating new user
 				  std::cout << "Movie Quiz" << std::endl;
           printQuiz();
 
-          std::cout << getTopString() << std::endl;
-          std::cout << getSecondString() << std::endl;
-          std::cout << getLastString() << std::endl;
+          //std::cout << getTopString() << std::endl;
+          //std::cout << getSecondString() << std::endl;
+          //std::cout << getLastString() << std::endl;
 
           movieList movieOne("./MovieFiles/" + getTopString() + ".txt"); //Create movie list object for the top rated trate
         	movieList movieTwo("./MovieFiles/" + getSecondString() + ".txt"); //Create movie list object for the second rated trate

@@ -200,12 +200,13 @@ public:
 
 string menu()
 {
+//this is the menu after login
   string userInput = "";
-  std::cout<< "\n1. Take Quiz" << std::endl;
-  std::cout << "2. Print Movie List" << std::endl;
-  std::cout << "3. Programmers Top Picks" << std::endl;
-  std::cout << "4. Log out" << std::endl;
-  std::cout << "5. Exit System" << std::endl;
+  std::cout<< "\n1. Take Quiz" << std::endl; //allows user to take quiz
+  std::cout << "2. Print Movie List" << std::endl; //prints the movie list
+  std::cout << "3. Programmers Top Picks" << std::endl; //Prints out programmer's top movies
+  std::cout << "4. Log out" << std::endl; //Logs out of system
+  std::cout << "5. Exit System" << std::endl; //shuts program down
   getline(std::cin, userInput);
   return userInput;
 }

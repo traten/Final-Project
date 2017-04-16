@@ -18,9 +18,10 @@ while(true) //this is used for creating new user
   cout << "\nWelcome to Movie Quiz!\n" << endl;
 	bool logIn = loginMenu(userList);
 
-	cout << "\n~~~~MOVIE QUIZ~~~~" << endl;
+	
 	while(logIn) //used for when user is inside log in page
 	{
+		cout << "\n~~~~MOVIE QUIZ~~~~" << endl;
 	    	string userInput = menu();
 		if(userInput.size()!= 1){ //If string is not only one character, print error.
 

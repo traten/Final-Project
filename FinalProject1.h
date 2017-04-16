@@ -215,6 +215,7 @@ bool loginMenu(linked_list<user>* userList)
   bool logIn = true;
   while(logIn)
   {
+	//Menu for login
 	std::cout << "1. Log in" << std::endl;
 	std::cout << "2. Create New User" << std::endl;
 	std::cout << "3. Exit System\n" << std::endl;
